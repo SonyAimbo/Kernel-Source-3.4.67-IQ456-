@@ -1,0 +1,15 @@
+*.~
+*~
+*.old
+*.bak
+*.orig
+
+.*
+*.o
+*.o.*
+
+.gitignore
+!.gitignore
+
+out/
+

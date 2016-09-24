@@ -1,0 +1,1469 @@
+t=0 chg=u
+<6>[43010.025274] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43010.026458] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43010.897237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43010.897261] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43010.897276] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43020.021558] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43020.023940] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43020.025240] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43020.026447] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43020.917243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43020.917268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43020.917283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43023.017203] (0)[0:swapper/0][printk_delayed:start]
+<4>[43023.017231] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43023007231897]
+<4>[43023.017239] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43023007242974]
+<4>[43023.017247] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43023007247589]
+<4>[43023.017254] (0)[0:swapper/0][thread:77][RT:43023007255974] 2016-09-23 00:30:30.93730 UTC; android time 2016-09-23 03:30:30.93730
+<4>[43023.017280] (0)[0:swapper/0][printk_delayed:done]
+<6>[43030.021817] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43030.024349] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43030.025213] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43030.026008] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43030.937234] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43030.937258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43030.937273] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43040.022082] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43040.024620] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43040.025504] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43040.026304] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43040.957240] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43040.957265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43040.957280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43043.027216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43043.027245] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43043017234129]
+<4>[43043.027253] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43043017245436]
+<4>[43043.027261] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43043017250129]
+<4>[43043.027268] (0)[0:swapper/0][thread:77][RT:43043017258052] 2016-09-23 00:30:50.103732 UTC; android time 2016-09-23 03:30:50.103732
+<4>[43043.027295] (0)[0:swapper/0][printk_delayed:done]
+<6>[43050.021674] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43050.024444] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43050.025318] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43050.026125] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43050.977225] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43050.977249] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43050.977265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43059.526711] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43060.021843] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43060.024208] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43060.025485] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43060.026659] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43060.997239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43060.997264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43060.997279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43063.037225] (0)[0:swapper/0][printk_delayed:start]
+<4>[43063.037256] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43063027226130]
+<4>[43063.037264] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43063027237976]
+<4>[43063.037273] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43063027243207]
+<4>[43063.037280] (0)[0:swapper/0][thread:77][RT:43063027252053] 2016-09-23 00:31:10.113726 UTC; android time 2016-09-23 03:31:10.113726
+<4>[43063.037307] (0)[0:swapper/0][printk_delayed:done]
+<6>[43070.021797] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43070.024476] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43070.025348] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43070.026190] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43071.017226] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43071.017250] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43071.017265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43080.021945] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43080.024765] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43080.025682] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43080.026489] (0)[113:healthd]healthd: battery l=100 l2=50 v=4170 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43081.037239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43081.037263] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43081.037279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43083.047215] (0)[0:swapper/0][printk_delayed:start]
+<4>[43083.047244] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43083037234747]
+<4>[43083.047252] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43083037246285]
+<4>[43083.047260] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43083037251131]
+<4>[43083.047267] (0)[0:swapper/0][thread:77][RT:43083037259900] 2016-09-23 00:31:30.123734 UTC; android time 2016-09-23 03:31:30.123734
+<4>[43083.047294] (0)[0:swapper/0][printk_delayed:done]
+<1>[43087.363970] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4315811
+<1>[43087.363995] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878532
+<1>[43087.364011] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2172706
+<1>[43087.364027] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3019999
+<1>[43087.364040] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43087.364054] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43087.364071] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43087.364091] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43087.364112] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43087.364134] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43087.364155] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43087.364177] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43087.364198] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43087.364220] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43087.364241] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43090.021869] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43090.036239] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43090.038372] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43090.039631] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43091.057224] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(0): 16
+<7>[43091.057249] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(1): 16
+<7>[43091.057266] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(2): 16
+<6>[43100.021845] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43100.024218] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43100.025090] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43100.025900] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43101.077239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43101.077264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43101.077280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43103.057218] (0)[0:swapper/0][printk_delayed:start]
+<4>[43103.057250] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43103047247902]
+<4>[43103.057258] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43103047259209]
+<4>[43103.057266] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43103047263902]
+<4>[43103.057273] (0)[0:swapper/0][thread:77][RT:43103047271902] 2016-09-23 00:31:50.133746 UTC; android time 2016-09-23 03:31:50.133746
+<4>[43103.057300] (0)[0:swapper/0][printk_delayed:done]
+<7>[43109.147284] (0)[20877:kworker/0:2][20877:kworker/0:2] exit
+<6>[43110.021806] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43110.024145] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43110.025022] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43110.026395] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43110.843503] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20895:ABenchMark:push] flag=0x50f00
+<7>[43110.847316] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20896:ABenchMark:push] flag=0x50f00
+<7>[43110.848303] (0)[20895:agoo-thread-81][20895:agoo-thread-81] exit
+<7>[43110.853969] (0)[20896:agoo-thread-82][20896:agoo-thread-82] exit
+<7>[43111.097239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43111.097262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43111.097278] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<3>[43113.547300] (0)[20887:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:It is long time (> 300 sec) not to query, we must query temp temperature..
+<3>[43113.547336] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43113.547364] (0)[20887:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43113.547408] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43113.547443] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43113.577251] (0)[20887:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<7>[43113.577451] (0)[2:kthreadd][2:2:kthreadd] fork [20897:20897:kthreadd] flag=0x800711
+<3>[43113.578113] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43113.578174] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43113.578184] (0)[20887:kworker/0:0]
+<3>[43113.578205] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43113.579291] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43113.579339] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43113.579348] (0)[20887:kworker/0:0]
+<3>[43113.579366] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43113.580490] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43113.580536] (0)[20887:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43113.580546] (0)[20887:kworker/0:0]
+<1>[43113.580563] (0)[20887:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43113.580583] (0)[20887:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43113.580643] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43113.581647] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43114.577263] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43114.577299] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43114.577323] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43114.577345] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43114.577374] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43114.577402] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43114.577446] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43114.577481] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43114.607259] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43114.608115] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43114.608175] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43114.608185] (0)[20897:kworker/0:2]
+<3>[43114.608205] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43114.609297] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43114.609343] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43114.609353] (0)[20897:kworker/0:2]
+<3>[43114.609371] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43114.610492] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43114.610537] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43114.610546] (0)[20897:kworker/0:2]
+<1>[43114.610564] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43114.610584] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43114.610624] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43114.611647] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43115.607271] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43115.607307] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43115.607330] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43115.607358] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43115.607386] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43115.607431] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43115.607467] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43115.637247] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43115.638099] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43115.638160] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43115.638169] (0)[20897:kworker/0:2]
+<3>[43115.638189] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43115.639278] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43115.639328] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43115.639337] (0)[20897:kworker/0:2]
+<3>[43115.639356] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43115.640474] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43115.640520] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43115.640529] (0)[20897:kworker/0:2]
+<1>[43115.640547] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43115.640566] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43115.640606] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43115.641657] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43116.637262] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43116.637297] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43116.637327] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43116.637355] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43116.637398] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43116.637433] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43116.667265] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43116.668124] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43116.668187] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43116.668196] (0)[20897:kworker/0:2]
+<3>[43116.668217] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43116.669301] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43116.669347] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43116.669356] (0)[20897:kworker/0:2]
+<3>[43116.669374] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43116.670496] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43116.670540] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43116.670549] (0)[20897:kworker/0:2]
+<1>[43116.670568] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43116.670588] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43116.670626] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43116.671655] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43117.667235] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43117.667278] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43117.667307] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43117.667348] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43117.667384] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43117.697248] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43117.698106] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43117.698168] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43117.698178] (0)[20897:kworker/0:2]
+<3>[43117.698199] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43117.699288] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43117.699335] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43117.699345] (0)[20897:kworker/0:2]
+<3>[43117.699363] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43117.700484] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43117.700530] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43117.700540] (0)[20897:kworker/0:2]
+<1>[43117.700558] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43117.700578] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43117.700618] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43117.701640] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<6>[43119.526697] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43120.021884] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43120.024251] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43120.025153] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43120.025952] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43121.117230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43121.117254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43121.117270] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43122.707223] (0)[0:swapper/0][STP-PSM] [I]_stp_psm_stp_is_idle: **IDLE is over 5000 msec, go to sleep!!!**
+<4>[43123.067212] (0)[700:Binder_3][printk_delayed:start]
+<4>[43123.067243] (0)[700:Binder_3][WDK], local_bit:0x0, cpu:0,RT[43123057221057]
+<4>[43123.067251] (0)[700:Binder_3][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43123057232749]
+<4>[43123.067260] (0)[700:Binder_3][WDK]: kick Ex WDT,RT[43123057237210]
+<4>[43123.067267] (0)[700:Binder_3][thread:77][RT:43123057245518] 2016-09-23 00:32:10.143719 UTC; android time 2016-09-23 03:32:10.143719
+<4>[43123.067294] (0)[700:Binder_3][printk_delayed:done]
+<6>[43130.022856] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43130.023749] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43130.024554] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43130.025332] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43131.137239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43131.137265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43131.137280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43140.023237] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43140.024120] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43140.024919] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43140.025698] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43141.157225] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43141.157250] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43141.157265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43143.077222] (0)[0:swapper/0][printk_delayed:start]
+<4>[43143.077254] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43143067229135]
+<4>[43143.077262] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43143067240750]
+<4>[43143.077271] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43143067245673]
+<4>[43143.077278] (0)[0:swapper/0][thread:77][RT:43143067253673] 2016-09-23 00:32:30.153728 UTC; android time 2016-09-23 03:32:30.153728
+<4>[43143.077304] (0)[0:swapper/0][printk_delayed:done]
+<6>[43150.022149] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43150.024788] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43150.025684] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43150.026503] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43151.177237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43151.177262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43151.177278] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43160.022010] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43160.024410] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43160.025273] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43160.026070] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43161.197233] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43161.197258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43161.197272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43163.087216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43163.087247] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43163077219751]
+<4>[43163.087254] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43163077230982]
+<4>[43163.087263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43163077235213]
+<4>[43163.087270] (0)[0:swapper/0][thread:77][RT:43163077244905] 2016-09-23 00:32:50.163719 UTC; android time 2016-09-23 03:32:50.163719
+<4>[43163.087296] (0)[0:swapper/0][printk_delayed:done]
+<1>[43165.943168] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4325811
+<1>[43165.943194] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878532
+<1>[43165.943210] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2172706
+<1>[43165.943225] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3029999
+<1>[43165.943239] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43165.943253] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43165.943270] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43165.943290] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43165.943311] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43165.943333] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43165.943354] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43165.943376] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43165.943397] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43165.943418] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43165.943439] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43170.022160] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43170.024521] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43170.025901] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43170.027098] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43171.217245] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43171.217269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43171.217284] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43179.526704] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43180.022121] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43180.024461] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43180.025372] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43180.026163] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43181.237230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43181.237254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43181.237269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43183.097199] (0)[0:swapper/0][printk_delayed:start]
+<4>[43183.097227] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43183087227214]
+<4>[43183.097235] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43183087238906]
+<4>[43183.097244] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43183087243753]
+<4>[43183.097251] (0)[0:swapper/0][thread:77][RT:43183087252445] 2016-09-23 00:33:10.173727 UTC; android time 2016-09-23 03:33:10.173727
+<4>[43183.097277] (0)[0:swapper/0][printk_delayed:done]
+<6>[43190.022341] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43190.024726] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43190.025996] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43190.027174] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43191.257243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43191.257268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43191.257283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43200.022271] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43200.024617] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43200.025526] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43200.026326] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43200.162819] (0)[696:CpuTracker][672:696:CpuTracker] fork [672:20898:CpuTracker] flag=0x50f00
+<7>[43200.169462] (0)[20898:BatteryStats-Wr][20898:BatteryStats-Wr] exit
+<7>[43201.277239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43201.277264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43201.277279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43203.107207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43203.107235] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43203097218600]
+<4>[43203.107243] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43203097229984]
+<4>[43203.107251] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43203097234831]
+<4>[43203.107258] (0)[0:swapper/0][thread:77][RT:43203097243061] 2016-09-23 00:33:30.183717 UTC; android time 2016-09-23 03:33:30.183717
+<4>[43203.107285] (0)[0:swapper/0][printk_delayed:done]
+<7>[43204.167737] (0)[1089:com.viber.voip][1089:1089:com.viber.voip] fork [1089:20899:com.viber.voip] flag=0x50f00
+<7>[43204.179913] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20900:ABenchMark:push] flag=0x50f00
+<7>[43204.186684] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20901:ABenchMark:push] flag=0x50f00
+<7>[43204.188548] (0)[20900:agoo-thread-83][20900:agoo-thread-83] exit
+<7>[43204.195446] (0)[20901:agoo-thread-84][20901:agoo-thread-84] exit
+<7>[43204.337642] (0)[20899:FilesGC][20899:FilesGC] exit
+<1>[43205.087250] (0)[20897:kworker/0:2]dbs_check_cpu: turn on CPU
+<1>[43205.177245] (0)[20897:kworker/0:2]hp_work_handler: cpu_up(1) kick off
+<7>[43205.177361] (0)[2:kthreadd][2:2:kthreadd] fork [20902:20902:kthreadd] flag=0x800711
+<7>[43205.187597] (0)[2:kthreadd][2:2:kthreadd] fork [20903:20903:kthreadd] flag=0x800711
+<7>[43205.187701] (0)[2:kthreadd][2:2:kthreadd] fork [20904:20904:kthreadd] flag=0x800711
+<1>[43205.197764] (0)[20897:kworker/0:2]regs_hotplug_callback cpu = 1
+<2>[43205.197848] (0)[20897:kworker/0:2]Boot slave CPU
+<1>[43205.199225] (1)[0:swapper/1]CPU1: Booted secondary processor
+<6>[43205.199250] (1)[0:swapper/1]Slave cpu init
+<1>[43205.199266] (1)[0:swapper/1]WD wd_cpu_hot_plug_on_notify kick ext wd
+<1>[43205.199298] (1)[0:swapper/1]regs_hotplug_callback cpu = 1
+<6>[43205.199323] (1)[0:swapper/1][ca7_timer]generic_timer_setup entry
+<1>[43205.200090] (0)[20897:kworker/0:2][Sched] cpuset_cpu_active 2
+<1>[43205.200123] (0)[20897:kworker/0:2][Sched] build_sched_domains
+<1>[43205.200287] (0)[20897:kworker/0:2]regs_hotplug_callback cpu = 1
+<1>[43205.200372] (0)[20897:kworker/0:2][wdk]bind thread[78] to cpu[1]
+<1>[43205.200395] (0)[20897:kworker/0:2][WDK]cpu 1 plug on kick wdt
+<1>[43205.200410] (0)[20897:kworker/0:2]hp_work_handler: cpu_up(1) completion
+<7>[43206.087375] (1)[2:kthreadd][2:2:kthreadd] fork [20905:20905:kthreadd] flag=0x800711
+<1>[43209.537255] (0)[20897:kworker/0:2]dbs_check_cpu: turn off CPU
+<1>[43209.697253] (0)[20897:kworker/0:2]hp_work_handler: cpu_down(1) kick off
+<1>[43209.697299] (0)[20897:kworker/0:2]regs_hotplug_callback cpu = 1
+<7>[43209.697426] (1)[2:kthreadd][2:2:kthreadd] fork [20906:20906:kthreadd] flag=0x800711
+<7>[43209.707604] (1)[2:kthreadd][2:2:kthreadd] fork [20907:20907:kthreadd] flag=0x800711
+<1>[43209.707705] (0)[20897:kworker/0:2][Sched] build_sched_domains
+<1>[43209.708067] (1)[20902:migration/1]regs_hotplug_callback cpu = 1
+<5>[43209.708177] (0)[20897:kworker/0:2]CPU1: shutdown
+<7>[43209.708444] (0)[20904:ksoftirqd/1][20904:ksoftirqd/1] exit
+<1>[43209.708560] (0)[20897:kworker/0:2]regs_hotplug_callback cpu = 1
+<1>[43209.708688] (0)[20897:kworker/0:2][WDK]cpu 1 plug off, kick wdt
+<7>[43209.708770] (0)[20902:migration/1][20902:migration/1] exit
+<1>[43209.708860] (0)[20897:kworker/0:2]regs_hotplug_callback cpu = 1
+<7>[43209.708894] (0)[20907:kworker/1:2][20907:kworker/1:2] exit
+<1>[43209.708921] (0)[20897:kworker/0:2]hp_work_handler: cpu_down(1) completion
+<7>[43209.807272] (0)[20905:kworker/1:1][20905:kworker/1:1] exit
+<7>[43209.807401] (0)[20903:kworker/1:0][20903:kworker/1:0] exit
+<7>[43209.807470] (0)[20906:workqueue_trust][20906:workqueue_trust] exit
+<6>[43210.023049] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43210.025237] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43210.026107] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43210.026906] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43211.297244] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43211.297269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43211.297284] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43220.022477] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43220.025223] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43220.026103] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43220.026905] (0)[113:healthd]healthd: battery l=100 l2=50 v=4169 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43221.317230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43221.317254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43221.317269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43223.117206] (0)[0:swapper/0][printk_delayed:start]
+<4>[43223.117234] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43223107229140]
+<4>[43223.117242] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43223107240601]
+<4>[43223.117250] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43223107245140]
+<4>[43223.117257] (0)[0:swapper/0][thread:77][RT:43223107253524] 2016-09-23 00:33:50.193728 UTC; android time 2016-09-23 03:33:50.193728
+<4>[43223.117284] (0)[0:swapper/0][printk_delayed:done]
+<6>[43230.022325] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43230.033502] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43230.038939] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43230.040245] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43231.337241] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43231.337266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43231.337281] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43239.526713] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43240.022355] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43240.024718] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43240.025597] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43240.026408] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43241.357239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43241.357264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43241.357279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43243.127207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43243.127236] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43243117232679]
+<4>[43243.127244] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43243117244141]
+<4>[43243.127253] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43243117248602]
+<4>[43243.127260] (0)[0:swapper/0][thread:77][RT:43243117256679] 2016-09-23 00:34:10.203731 UTC; android time 2016-09-23 03:34:10.203731
+<4>[43243.127288] (0)[0:swapper/0][printk_delayed:done]
+<1>[43249.178090] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4336602
+<1>[43249.178116] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878949
+<1>[43249.178132] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2173914
+<1>[43249.178146] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3039999
+<1>[43249.178160] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43249.178174] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43249.178190] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43249.178211] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43249.178232] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43249.178254] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43249.178276] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43249.178297] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43249.178318] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43249.178340] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43249.178361] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43250.022512] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43250.024838] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43250.025746] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43250.026546] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43251.377240] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43251.377264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43251.377279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43260.022370] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43260.024691] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43260.025557] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43260.026357] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43261.397241] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43261.397265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43261.397280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43263.137219] (0)[0:swapper/0][printk_delayed:start]
+<4>[43263.137251] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43263127207142]
+<4>[43263.137259] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43263127218680]
+<4>[43263.137267] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43263127223142]
+<4>[43263.137274] (0)[0:swapper/0][thread:77][RT:43263127231450] 2016-09-23 00:34:30.213706 UTC; android time 2016-09-23 03:34:30.213706
+<4>[43263.137302] (0)[0:swapper/0][printk_delayed:done]
+<6>[43270.023388] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43270.024282] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43270.025085] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43270.025873] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43271.417235] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43271.417260] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43271.417276] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43280.022442] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43280.024791] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43280.025655] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43280.026441] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43281.437241] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43281.437266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43281.437281] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43283.147207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43283.147235] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43283137220220]
+<4>[43283.147243] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43283137231373]
+<4>[43283.147252] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43283137235989]
+<4>[43283.147259] (0)[0:swapper/0][thread:77][RT:43283137244604] 2016-09-23 00:34:50.223719 UTC; android time 2016-09-23 03:34:50.223719
+<4>[43283.147285] (0)[0:swapper/0][printk_delayed:done]
+<6>[43290.023538] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43290.024441] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43290.025241] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43290.026027] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43291.457239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43291.457264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43291.457279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43299.526703] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43300.022615] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43300.024891] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43300.025764] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43300.026559] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43301.477243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43301.477268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43301.477283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43303.157216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43303.157246] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43303147233144]
+<4>[43303.157255] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43303147245452]
+<4>[43303.157263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43303147249990]
+<4>[43303.157270] (0)[0:swapper/0][thread:77][RT:43303147259452] 2016-09-23 00:35:10.233734 UTC; android time 2016-09-23 03:35:10.233734
+<4>[43303.157297] (0)[0:swapper/0][printk_delayed:done]
+<6>[43310.023527] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43310.024419] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43310.025214] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43310.025990] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43311.497221] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(0): 16
+<7>[43311.497246] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(1): 16
+<7>[43311.497262] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(2): 16
+<6>[43320.023628] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43320.024518] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43320.026033] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43320.027328] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43321.517230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43321.517255] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43321.517271] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43323.167206] (0)[19514:.solidexplorer2][printk_delayed:start]
+<4>[43323.167235] (0)[19514:.solidexplorer2][WDK], local_bit:0x0, cpu:0,RT[43323157228760]
+<4>[43323.167243] (0)[19514:.solidexplorer2][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43323157240607]
+<4>[43323.167252] (0)[19514:.solidexplorer2][WDK]: kick Ex WDT,RT[43323157245299]
+<4>[43323.167260] (0)[19514:.solidexplorer2][thread:77][RT:43323157253530] 2016-09-23 00:35:30.243728 UTC; android time 2016-09-23 03:35:30.243728
+<4>[43323.167287] (0)[19514:.solidexplorer2][printk_delayed:done]
+<6>[43330.022688] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43330.025036] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43330.025912] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43330.026710] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<1>[43331.047311] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4346602
+<1>[43331.047337] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878949
+<1>[43331.047352] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2173914
+<1>[43331.047367] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3049999
+<1>[43331.047381] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43331.047395] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43331.047411] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43331.047432] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43331.047453] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43331.047475] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43331.047496] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43331.047517] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43331.047539] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43331.047560] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43331.047581] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<7>[43331.537232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43331.537257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43331.537272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43340.023677] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43340.024566] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43340.025377] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43340.026163] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43341.557229] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43341.557254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43341.557269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43343.177206] (0)[0:swapper/0][printk_delayed:start]
+<4>[43343.177234] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43343167221146]
+<4>[43343.177242] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43343167232992]
+<4>[43343.177251] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43343167237531]
+<4>[43343.177258] (0)[0:swapper/0][thread:77][RT:43343167245685] 2016-09-23 00:35:50.253720 UTC; android time 2016-09-23 03:35:50.253720
+<4>[43343.177285] (0)[0:swapper/0][printk_delayed:done]
+<6>[43350.023770] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43350.024659] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43350.025465] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43350.026250] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43351.577244] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43351.577268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43351.577283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43359.526699] (0)[113:healthd]healthd: battery l=100 l2=50 v=4168 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43360.022742] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43360.034736] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43360.039456] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43360.040746] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43361.597232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43361.597257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43361.597272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43363.187206] (0)[0:swapper/0][printk_delayed:start]
+<4>[43363.187234] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43363177219071]
+<4>[43363.187242] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43363177231147]
+<4>[43363.187251] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43363177235763]
+<4>[43363.187258] (0)[0:swapper/0][thread:77][RT:43363177244917] 2016-09-23 00:36:10.263719 UTC; android time 2016-09-23 03:36:10.263719
+<4>[43363.187284] (0)[0:swapper/0][printk_delayed:done]
+<6>[43370.023429] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43370.025618] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43370.026518] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43370.027954] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43371.617243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43371.617268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43371.617284] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43380.022897] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43380.025230] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43380.026107] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43380.026917] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43381.637238] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43381.637264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43381.637279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43383.197204] (0)[0:swapper/0][printk_delayed:start]
+<4>[43383.197233] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43383187228533]
+<4>[43383.197241] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43383187240149]
+<4>[43383.197249] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43383187244841]
+<4>[43383.197256] (0)[0:swapper/0][thread:77][RT:43383187253226] 2016-09-23 00:36:30.273727 UTC; android time 2016-09-23 03:36:30.273727
+<4>[43383.197282] (0)[0:swapper/0][printk_delayed:done]
+<6>[43390.022913] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43390.025320] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43390.026190] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43390.026989] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43391.657229] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43391.657254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43391.657269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43400.023896] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43400.026060] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43400.026934] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43400.028391] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43401.677240] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43401.677266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43401.677281] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43403.207207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43403.207235] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43403197220611]
+<4>[43403.207242] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43403197232150]
+<4>[43403.207251] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43403197236611]
+<4>[43403.207258] (0)[0:swapper/0][thread:77][RT:43403197245842] 2016-09-23 00:36:50.283720 UTC; android time 2016-09-23 03:36:50.283720
+<4>[43403.207284] (0)[0:swapper/0][printk_delayed:done]
+<6>[43410.023968] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43410.024905] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43410.025723] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43410.026510] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43411.697225] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(0): 16
+<7>[43411.697251] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(1): 16
+<7>[43411.697267] (0)[19514:.solidexplorer2][ccci/ctl] (1)get_txpower(2): 16
+<1>[43413.638637] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4356602
+<1>[43413.638663] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878949
+<1>[43413.638679] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2173914
+<1>[43413.638693] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3059999
+<1>[43413.638707] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43413.638721] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43413.638738] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43413.638759] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43413.638780] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43413.638802] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43413.638824] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43413.638845] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43413.638867] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43413.638888] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43413.638909] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<7>[43414.159764] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20908:ABenchMark:push] flag=0x50f00
+<7>[43414.162945] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20909:ABenchMark:push] flag=0x50f00
+<7>[43414.163922] (0)[20908:agoo-thread-85][20908:agoo-thread-85] exit
+<7>[43414.168102] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20910:ABenchMark:push] flag=0x50f00
+<7>[43414.169480] (0)[20909:agoo-thread-86][20909:agoo-thread-86] exit
+<7>[43414.173748] (0)[20910:agoo-thread-87][20910:agoo-thread-87] exit
+<7>[43414.317286] (0)[20887:kworker/0:0][20887:kworker/0:0] exit
+<3>[43418.697262] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:It is long time (> 300 sec) not to query, we must query temp temperature..
+<3>[43418.697301] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43418.697329] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43418.697375] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43418.697409] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43418.727255] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<7>[43418.727454] (0)[2:kthreadd][2:2:kthreadd] fork [20911:20911:kthreadd] flag=0x800711
+<3>[43418.728123] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43418.728188] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43418.728197] (0)[20897:kworker/0:2]
+<3>[43418.728219] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43418.729298] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43418.729347] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43418.729356] (0)[20897:kworker/0:2]
+<3>[43418.729375] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43418.730495] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43418.730539] (0)[20897:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43418.730548] (0)[20897:kworker/0:2]
+<1>[43418.730566] (0)[20897:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43418.730586] (0)[20897:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43418.730644] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43418.731651] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<6>[43419.526695] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<3>[43419.727252] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43419.727287] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43419.727311] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43419.727333] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43419.727361] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43419.727388] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43419.727431] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43419.727466] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43419.757289] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43419.758148] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43419.758212] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43419.758222] (0)[20911:kworker/0:0]
+<3>[43419.758242] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43419.759328] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43419.759377] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43419.759387] (0)[20911:kworker/0:0]
+<3>[43419.759405] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43419.760524] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43419.760569] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43419.760578] (0)[20911:kworker/0:0]
+<1>[43419.760596] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43419.760616] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43419.760654] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43419.761684] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<6>[43420.023197] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43420.025506] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43420.026787] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43420.028086] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<3>[43420.757260] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43420.757296] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43420.757319] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43420.757347] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43420.757376] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43420.757420] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43420.757455] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43420.787264] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43420.788117] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43420.788176] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43420.788185] (0)[20911:kworker/0:0]
+<3>[43420.788206] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43420.789330] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43420.789399] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43420.789409] (0)[20911:kworker/0:0]
+<3>[43420.789428] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43420.790500] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43420.790554] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43420.790564] (0)[20911:kworker/0:0]
+<1>[43420.790583] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43420.790604] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43420.790645] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43420.791653] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<7>[43421.717232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43421.717258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43421.717273] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<3>[43421.787263] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43421.787298] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43421.787327] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43421.787355] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43421.787397] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43421.787433] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43421.817263] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43421.818125] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43421.818188] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43421.818198] (0)[20911:kworker/0:0]
+<3>[43421.818218] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43421.819305] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43421.819353] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43421.819363] (0)[20911:kworker/0:0]
+<3>[43421.819382] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43421.820504] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43421.820550] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43421.820560] (0)[20911:kworker/0:0]
+<1>[43421.820578] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43421.820598] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43421.820637] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43421.821660] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43422.817230] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43422.817271] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43422.817299] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43422.817344] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43422.817378] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43422.847231] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43422.848088] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43422.848148] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43422.848158] (0)[20911:kworker/0:0]
+<3>[43422.848179] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43422.849267] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43422.849315] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43422.849325] (0)[20911:kworker/0:0]
+<3>[43422.849343] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43422.850462] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43422.850506] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43422.850516] (0)[20911:kworker/0:0]
+<1>[43422.850534] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43422.850554] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43422.850595] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43422.851622] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<4>[43423.217202] (0)[0:swapper/0][printk_delayed:start]
+<4>[43423.217232] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43423207240382]
+<4>[43423.217240] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43423207251536]
+<4>[43423.217248] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43423207255997]
+<4>[43423.217255] (0)[0:swapper/0][thread:77][RT:43423207264074] 2016-09-23 00:37:10.293738 UTC; android time 2016-09-23 03:37:10.293738
+<4>[43423.217282] (0)[0:swapper/0][printk_delayed:done]
+<1>[43427.857217] (0)[0:swapper/0][STP-PSM] [I]_stp_psm_stp_is_idle: **IDLE is over 5000 msec, go to sleep!!!**
+<6>[43430.023079] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43430.025411] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43430.026289] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43430.027083] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43431.737233] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43431.737257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43431.737272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43440.023038] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43440.025385] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43440.026639] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43440.027947] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43441.757225] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43441.757250] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43441.757266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43443.227213] (0)[0:swapper/0][printk_delayed:start]
+<4>[43443.227245] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43443217249152]
+<4>[43443.227253] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43443217259998]
+<4>[43443.227262] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43443217264998]
+<4>[43443.227269] (0)[0:swapper/0][thread:77][RT:43443217272998] 2016-09-23 00:37:30.303747 UTC; android time 2016-09-23 03:37:30.303747
+<4>[43443.227296] (0)[0:swapper/0][printk_delayed:done]
+<6>[43450.023146] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43450.025507] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43450.026799] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43450.028127] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43451.777219] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43451.777243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43451.777258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43460.023131] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43460.025325] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43460.026724] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43460.028039] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43461.797239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43461.797264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43461.797279] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43463.237216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43463.237247] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43463227230923]
+<4>[43463.237255] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43463227242692]
+<4>[43463.237263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43463227247461]
+<4>[43463.237270] (0)[0:swapper/0][thread:77][RT:43463227256000] 2016-09-23 00:37:50.313730 UTC; android time 2016-09-23 03:37:50.313730
+<4>[43463.237296] (0)[0:swapper/0][printk_delayed:done]
+<6>[43470.023252] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43470.025616] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43470.026901] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43470.028199] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43471.817224] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43471.817249] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43471.817265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43479.526690] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43480.024470] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43480.025355] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43480.026167] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43480.026952] (0)[113:healthd]healthd: battery l=100 l2=50 v=4167 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43481.837230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43481.837254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43481.837269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43483.247203] (0)[0:swapper/0][printk_delayed:start]
+<4>[43483.247231] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43483237230155]
+<4>[43483.247239] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43483237241924]
+<4>[43483.247248] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43483237246847]
+<4>[43483.247255] (0)[0:swapper/0][thread:77][RT:43483237255001] 2016-09-23 00:38:10.323729 UTC; android time 2016-09-23 03:38:10.323729
+<4>[43483.247281] (0)[0:swapper/0][printk_delayed:done]
+<6>[43490.024129] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43490.025031] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43490.025839] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43490.026640] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43491.857226] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43491.857251] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43491.857266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43495.360353] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4366602
+<1>[43495.360379] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878949
+<1>[43495.360394] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2173914
+<1>[43495.360409] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3069999
+<1>[43495.360424] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43495.360437] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43495.360454] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43495.360475] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43495.360496] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43495.360518] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43495.360540] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43495.360561] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43495.360582] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43495.360604] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43495.360625] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43500.023975] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43500.026104] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43500.026973] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43500.028440] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43501.877237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43501.877261] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43501.877277] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43503.257209] (0)[0:swapper/0][printk_delayed:start]
+<4>[43503.257236] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43503247223233]
+<4>[43503.257244] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43503247235079]
+<4>[43503.257253] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43503247239617]
+<4>[43503.257260] (0)[0:swapper/0][thread:77][RT:43503247248387] 2016-09-23 00:38:30.333722 UTC; android time 2016-09-23 03:38:30.333722
+<4>[43503.257286] (0)[0:swapper/0][printk_delayed:done]
+<6>[43510.023934] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43510.026129] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43510.027001] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43510.028466] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43511.897221] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43511.897246] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43511.897261] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43520.023364] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43520.025712] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43520.026612] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43520.028046] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43521.917239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43521.917265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43521.917280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43523.267212] (0)[277:EventThread][printk_delayed:start]
+<4>[43523.267242] (0)[277:EventThread][WDK], local_bit:0x0, cpu:0,RT[43523257232311]
+<4>[43523.267251] (0)[277:EventThread][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43523257243695]
+<4>[43523.267259] (0)[277:EventThread][WDK]: kick Ex WDT,RT[43523257249080]
+<4>[43523.267267] (0)[277:EventThread][thread:77][RT:43523257257157] 2016-09-23 00:38:50.343731 UTC; android time 2016-09-23 03:38:50.343731
+<4>[43523.267295] (0)[277:EventThread][printk_delayed:done]
+<6>[43530.023415] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43530.025706] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43530.026621] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43530.028146] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43531.937229] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43531.937253] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43531.937268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43539.526699] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43540.023424] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43540.025732] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43540.026654] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43540.028100] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43541.957232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43541.957257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43541.957272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43543.277210] (0)[0:swapper/0][printk_delayed:start]
+<4>[43543.277239] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43543267234004]
+<4>[43543.277247] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43543267245158]
+<4>[43543.277256] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43543267249697]
+<4>[43543.277263] (0)[0:swapper/0][thread:77][RT:43543267259389] 2016-09-23 00:39:10.353733 UTC; android time 2016-09-23 03:39:10.353733
+<4>[43543.277289] (0)[0:swapper/0][printk_delayed:done]
+<6>[43550.024391] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43550.025305] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43550.026119] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43550.026909] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43551.977228] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43551.977253] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43551.977268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43560.024509] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43560.025417] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43560.026222] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43560.027010] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43561.997233] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43561.997258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43561.997274] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43563.287214] (0)[0:swapper/0][printk_delayed:start]
+<4>[43563.287245] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43563277232775]
+<4>[43563.287253] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43563277243621]
+<4>[43563.287262] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43563277248313]
+<4>[43563.287269] (0)[0:swapper/0][thread:77][RT:43563277256544] 2016-09-23 00:39:30.363731 UTC; android time 2016-09-23 03:39:30.363731
+<4>[43563.287295] (0)[0:swapper/0][printk_delayed:done]
+<6>[43570.024601] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43570.025488] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43570.026290] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43570.027076] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43572.017238] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43572.017262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43572.017277] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43577.462338] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4376602
+<1>[43577.462365] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=878949
+<1>[43577.462381] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2173914
+<1>[43577.462396] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3079999
+<1>[43577.462409] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43577.462423] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43577.462440] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43577.462461] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43577.462482] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43577.462503] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43577.462524] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43577.462546] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43577.462567] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43577.462589] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43577.462609] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43580.024553] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43580.025500] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43580.026317] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43580.027108] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43582.037238] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43582.037262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43582.037277] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43583.297205] (0)[0:swapper/0][printk_delayed:start]
+<4>[43583.297232] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43583287232314]
+<4>[43583.297240] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43583287244314]
+<4>[43583.297249] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43583287248853]
+<4>[43583.297256] (0)[0:swapper/0][thread:77][RT:43583287256699] 2016-09-23 00:39:50.373731 UTC; android time 2016-09-23 03:39:50.373731
+<4>[43583.297282] (0)[0:swapper/0][printk_delayed:done]
+<7>[43589.794560] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20912:ABenchMark:push] flag=0x50f00
+<7>[43589.811188] (0)[20912:agoo-thread-88][20912:agoo-thread-88] exit
+<7>[43589.859598] (0)[19495:gle.android.gms][19495:19495:gle.android.gms] fork [19495:20913:gle.android.gms] flag=0x50f00
+<7>[43589.963167] (0)[20913:Thread-755][20913:Thread-755] exit
+<6>[43590.023701] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43590.026097] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43590.027469] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43590.028693] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<1>[43590.287232] (0)[20911:kworker/0:0]dbs_check_cpu: turn on CPU
+<1>[43590.327234] (0)[20911:kworker/0:0]hp_work_handler: cpu_up(1) kick off
+<7>[43590.329914] (0)[2:kthreadd][2:2:kthreadd] fork [20914:20914:kthreadd] flag=0x800711
+<7>[43590.340464] (0)[2:kthreadd][2:2:kthreadd] fork [20915:20915:kthreadd] flag=0x800711
+<7>[43590.340569] (0)[2:kthreadd][2:2:kthreadd] fork [20916:20916:kthreadd] flag=0x800711
+<1>[43590.350647] (0)[20911:kworker/0:0]regs_hotplug_callback cpu = 1
+<2>[43590.350738] (0)[20911:kworker/0:0]Boot slave CPU
+<1>[43590.352104] (1)[0:swapper/1]CPU1: Booted secondary processor
+<6>[43590.352130] (1)[0:swapper/1]Slave cpu init
+<1>[43590.352145] (1)[0:swapper/1]WD wd_cpu_hot_plug_on_notify kick ext wd
+<1>[43590.352177] (1)[0:swapper/1]regs_hotplug_callback cpu = 1
+<6>[43590.352207] (1)[0:swapper/1][ca7_timer]generic_timer_setup entry
+<1>[43590.352228] (0)[20911:kworker/0:0][Sched] cpuset_cpu_active 2
+<1>[43590.352255] (0)[20911:kworker/0:0][Sched] build_sched_domains
+<1>[43590.352389] (0)[20911:kworker/0:0]regs_hotplug_callback cpu = 1
+<1>[43590.352469] (0)[20911:kworker/0:0][wdk]bind thread[78] to cpu[1]
+<1>[43590.352493] (0)[20911:kworker/0:0][WDK]cpu 1 plug on kick wdt
+<1>[43590.352507] (0)[20911:kworker/0:0]hp_work_handler: cpu_up(1) completion
+<7>[43590.424554] (0)[2:kthreadd][2:2:kthreadd] fork [20917:20917:kthreadd] flag=0x800711
+<7>[43592.057214] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43592.057239] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43592.057254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43593.877244] (0)[20911:kworker/0:0]dbs_check_cpu: turn off CPU
+<1>[43593.887237] (0)[20911:kworker/0:0]hp_work_handler: cpu_down(1) kick off
+<1>[43593.887281] (0)[20911:kworker/0:0]regs_hotplug_callback cpu = 1
+<7>[43593.887433] (1)[2:kthreadd][2:2:kthreadd] fork [20918:20918:kthreadd] flag=0x800711
+<7>[43593.897574] (1)[2:kthreadd][2:2:kthreadd] fork [20919:20919:kthreadd] flag=0x800711
+<1>[43593.897663] (0)[20911:kworker/0:0][Sched] build_sched_domains
+<1>[43593.898041] (1)[20914:migration/1]regs_hotplug_callback cpu = 1
+<5>[43593.898151] (0)[20911:kworker/0:0]CPU1: shutdown
+<7>[43593.898422] (0)[20916:ksoftirqd/1][20916:ksoftirqd/1] exit
+<1>[43593.898504] (0)[20911:kworker/0:0]regs_hotplug_callback cpu = 1
+<1>[43593.898629] (0)[20911:kworker/0:0][WDK]cpu 1 plug off, kick wdt
+<7>[43593.898710] (0)[20914:migration/1][20914:migration/1] exit
+<1>[43593.898775] (0)[20911:kworker/0:0]regs_hotplug_callback cpu = 1
+<7>[43593.898809] (0)[20919:kworker/1:2][20919:kworker/1:2] exit
+<1>[43593.898835] (0)[20911:kworker/0:0]hp_work_handler: cpu_down(1) completion
+<7>[43593.997258] (0)[20917:kworker/1:1][20917:kworker/1:1] exit
+<7>[43593.997352] (0)[20915:kworker/1:0][20915:kworker/1:0] exit
+<7>[43593.997404] (0)[20918:workqueue_trust][20918:workqueue_trust] exit
+<6>[43599.526713] (0)[113:healthd]healthd: battery l=100 l2=50 v=4166 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43600.024705] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43600.025620] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43600.026428] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43600.042004] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43602.077229] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43602.077254] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43602.077269] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43603.307216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43603.307247] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43603297238469]
+<4>[43603.307254] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43603297248854]
+<4>[43603.307263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43603297253239]
+<4>[43603.307270] (0)[0:swapper/0][thread:77][RT:43603297261239] 2016-09-23 00:40:10.383735 UTC; android time 2016-09-23 03:40:10.383735
+<4>[43603.307297] (0)[0:swapper/0][printk_delayed:done]
+<6>[43610.024583] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43610.026635] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43610.027998] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43610.029182] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43612.097223] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43612.097247] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43612.097262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43620.023806] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43620.026176] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43620.027584] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43620.028778] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43622.117237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43622.117261] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43622.117276] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43623.317215] (0)[0:swapper/0][printk_delayed:start]
+<4>[43623.317246] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43623307229009]
+<4>[43623.317253] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43623307240932]
+<4>[43623.317262] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43623307245624]
+<4>[43623.317269] (0)[0:swapper/0][thread:77][RT:43623307253470] 2016-09-23 00:40:30.393728 UTC; android time 2016-09-23 03:40:30.393728
+<4>[43623.317295] (0)[0:swapper/0][printk_delayed:done]
+<6>[43630.024302] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43630.026488] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43630.027851] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43630.029033] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43632.137230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43632.137256] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43632.137271] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43640.024686] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43640.025580] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43640.026395] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43640.027919] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43642.157232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43642.157257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43642.157272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43643.327204] (0)[0:swapper/0][printk_delayed:start]
+<4>[43643.327232] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43643317229318]
+<4>[43643.327241] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43643317241472]
+<4>[43643.327249] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43643317246087]
+<4>[43643.327256] (0)[0:swapper/0][thread:77][RT:43643317253702] 2016-09-23 00:40:50.403728 UTC; android time 2016-09-23 03:40:50.403728
+<4>[43643.327281] (0)[0:swapper/0][printk_delayed:done]
+<6>[43650.024252] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43650.026775] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43650.028380] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43650.029291] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43652.177231] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43652.177257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43652.177272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43659.526731] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43660.024826] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43660.025725] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43660.026535] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43660.028125] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<1>[43660.290109] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4387275
+<1>[43660.290136] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=879327
+<1>[43660.290151] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2174964
+<1>[43660.290166] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3089999
+<1>[43660.290180] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43660.290194] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43660.290211] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43660.290231] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43660.290252] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43660.290274] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43660.290295] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43660.290317] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43660.290338] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43660.290359] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43660.290380] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<7>[43662.197237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43662.197262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43662.197277] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43663.337214] (0)[0:swapper/0][printk_delayed:start]
+<4>[43663.337245] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43663327243242]
+<4>[43663.337253] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43663327255242]
+<4>[43663.337262] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43663327259858]
+<4>[43663.337269] (0)[0:swapper/0][thread:77][RT:43663327267627] 2016-09-23 00:41:10.413742 UTC; android time 2016-09-23 03:41:10.413742
+<4>[43663.337295] (0)[0:swapper/0][printk_delayed:done]
+<6>[43670.024820] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43670.025720] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43670.026519] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43670.028119] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43672.217234] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43672.217259] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43672.217274] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43680.023876] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43680.026205] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43680.027087] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43680.028537] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43682.237244] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43682.237268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43682.237284] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43683.347207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43683.347234] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43683337221936]
+<4>[43683.347242] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43683337233243]
+<4>[43683.347251] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43683337237628]
+<4>[43683.347258] (0)[0:swapper/0][thread:77][RT:43683337245936] 2016-09-23 00:41:30.423720 UTC; android time 2016-09-23 03:41:30.423720
+<4>[43683.347284] (0)[0:swapper/0][printk_delayed:done]
+<6>[43690.024911] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43690.025812] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43690.026625] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43690.028213] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43692.257235] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43692.257260] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43692.257275] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43700.023963] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43700.026323] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43700.027742] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43700.028942] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43702.277243] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43702.277268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43702.277283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43703.357216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43703.357246] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43703347236168]
+<4>[43703.357255] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43703347248014]
+<4>[43703.357263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43703347252706]
+<4>[43703.357270] (0)[0:swapper/0][thread:77][RT:43703347260783] 2016-09-23 00:41:50.433735 UTC; android time 2016-09-23 03:41:50.433735
+<4>[43703.357297] (0)[0:swapper/0][printk_delayed:done]
+<6>[43710.025047] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43710.025949] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43710.027548] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43710.028751] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43712.297227] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43712.297252] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43712.297267] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<7>[43718.917292] (0)[20897:kworker/0:2][20897:kworker/0:2] exit
+<6>[43719.526747] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43720.025686] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43720.026593] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43720.028370] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43720.029611] (0)[113:healthd]healthd: battery l=100 l2=50 v=4165 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43722.317240] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43722.317264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43722.317280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43723.367214] (0)[0:swapper/0][printk_delayed:start]
+<4>[43723.367244] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43723357237784]
+<4>[43723.367252] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43723357249938]
+<4>[43723.367261] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43723357254630]
+<4>[43723.367268] (0)[0:swapper/0][thread:77][RT:43723357263015] 2016-09-23 00:42:10.443737 UTC; android time 2016-09-23 03:42:10.443737
+<4>[43723.367294] (0)[0:swapper/0][printk_delayed:done]
+<3>[43723.847241] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:It is long time (> 300 sec) not to query, we must query temp temperature..
+<3>[43723.847278] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43723.847307] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43723.847350] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43723.847385] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43723.877237] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<7>[43723.877523] (0)[2:kthreadd][2:2:kthreadd] fork [20920:20920:kthreadd] flag=0x800711
+<3>[43723.878104] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43723.878173] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43723.878183] (0)[20911:kworker/0:0]
+<3>[43723.878205] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43723.879283] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43723.879344] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43723.879354] (0)[20911:kworker/0:0]
+<3>[43723.879374] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43723.880468] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43723.880517] (0)[20911:kworker/0:0][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43723.880526] (0)[20911:kworker/0:0]
+<1>[43723.880545] (0)[20911:kworker/0:0][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43723.880565] (0)[20911:kworker/0:0][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43723.880627] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43723.881627] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43724.877262] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43724.877298] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43724.877321] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43724.877343] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43724.877371] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43724.877400] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43724.877445] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43724.877480] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43724.907256] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43724.908112] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43724.908175] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43724.908185] (0)[20920:kworker/0:2]
+<3>[43724.908206] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43724.909292] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43724.909339] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(25) ok
+<3>[43724.909349] (0)[20920:kworker/0:2]
+<3>[43724.909368] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43724.910500] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43724.910552] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43724.910562] (0)[20920:kworker/0:2]
+<1>[43724.910581] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43724.910601] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x19 
+<1>[43724.910643] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43724.911653] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43725.907271] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43725.907306] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43725.907329] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43725.907357] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43725.907385] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43725.907428] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43725.907463] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43725.937261] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43725.938118] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43725.938180] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43725.938189] (0)[20920:kworker/0:2]
+<3>[43725.938210] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43725.939298] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43725.939349] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(25) ok
+<3>[43725.939359] (0)[20920:kworker/0:2]
+<3>[43725.939377] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43725.940495] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43725.940540] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43725.940550] (0)[20920:kworker/0:2]
+<1>[43725.940568] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43725.940587] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x19 
+<1>[43725.940627] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43725.941654] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43726.937257] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43726.937294] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43726.937323] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43726.937351] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43726.937395] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43726.937430] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43726.967263] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43726.968118] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43726.968178] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43726.968187] (0)[20920:kworker/0:2]
+<3>[43726.968209] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43726.969318] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43726.969378] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(25) ok
+<3>[43726.969388] (0)[20920:kworker/0:2]
+<3>[43726.969407] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43726.970520] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43726.970585] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43726.970595] (0)[20920:kworker/0:2]
+<1>[43726.970614] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43726.970634] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x19 
+<1>[43726.970677] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43726.971720] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<3>[43727.967269] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:temperature table is still intial value, we should query temp temperature..
+<3>[43727.967311] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) start
+<1>[43727.967339] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(1) enqueue
+<1>[43727.967384] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(1)
+<7>[43727.967420] (0)[189:mtk_stp_psm]exit deep idle ok(0)
+<1>[43727.997251] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_do_wait: STP is waiting state for ACT, i=1, state = 0
+<3>[43727.998111] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43727.998173] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(1) return(1) ok
+<3>[43727.998183] (0)[20920:kworker/0:2]
+<3>[43727.998204] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) start
+<3>[43727.999288] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_READ_CMD command OK!
+<3>[43727.999337] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(2) return(27) ok
+<3>[43727.999347] (0)[20920:kworker/0:2]
+<3>[43727.999364] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) start
+<3>[43728.000486] (0)[217:mtk_wmtd][WMT-CORE][I]opfunc_therm_ctrl:Send WMT_THERM_CTRL_CMD command OK!
+<3>[43728.000534] (0)[20920:kworker/0:2][WMT-EXP][I]_mtk_wcn_wmt_therm_ctrl:OPID(15) type(3) return(1) ok
+<3>[43728.000544] (0)[20920:kworker/0:2]
+<1>[43728.000562] (0)[20920:kworker/0:2][STP-PSM] [I]_stp_psm_put_op: opId(0) enqueue
+<3>[43728.000581] (0)[20920:kworker/0:2][WMT-DEV][I]wmt_dev_tm_temp_query:[Thermal] current_temp = 0x1b 
+<1>[43728.000620] (0)[189:mtk_stp_psm][STP-PSM] [I]_stp_psm_get_op: last_active_opId(0)
+<7>[43728.001646] (0)[189:mtk_stp_psm]enter deep idle ok(0)
+<6>[43730.024265] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43730.040303] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43730.041628] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43730.042826] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43732.337232] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43732.337257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43732.337272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43733.007212] (0)[0:swapper/0][STP-PSM] [I]_stp_psm_stp_is_idle: **IDLE is over 5000 msec, go to sleep!!!**
+<1>[43739.319830] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4397275
+<1>[43739.319856] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=879327
+<1>[43739.319872] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2174964
+<1>[43739.319886] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3099999
+<1>[43739.319900] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43739.319914] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43739.319931] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43739.319952] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43739.319973] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43739.319994] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43739.320016] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43739.320037] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43739.320058] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43739.320079] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43739.320100] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43740.024842] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43740.027092] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43740.028447] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43740.029649] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43740.846521] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20921:ABenchMark:push] flag=0x50f00
+<7>[43740.851413] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20922:ABenchMark:push] flag=0x50f00
+<7>[43740.852705] (0)[20921:agoo-thread-89][20921:agoo-thread-89] exit
+<7>[43740.856418] (0)[19211:ABenchMark:push][19211:19211:ABenchMark:push] fork [19211:20923:ABenchMark:push] flag=0x50f00
+<7>[43740.857843] (0)[20922:agoo-thread-90][20922:agoo-thread-90] exit
+<7>[43740.862780] (0)[20923:agoo-thread-91][20923:agoo-thread-91] exit
+<7>[43742.357234] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43742.357258] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43742.357274] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43743.377207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43743.377237] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43743367231939]
+<4>[43743.377245] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43743367243632]
+<4>[43743.377253] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43743367248401]
+<4>[43743.377260] (0)[0:swapper/0][thread:77][RT:43743367256247] 2016-09-23 00:42:30.453730 UTC; android time 2016-09-23 03:42:30.453730
+<4>[43743.377286] (0)[0:swapper/0][printk_delayed:done]
+<6>[43750.024247] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43750.026601] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43750.027982] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43750.029163] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43752.377231] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43752.377257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43752.377272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43760.025169] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43760.026056] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43760.026862] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43760.028681] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43762.397234] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43762.397260] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43762.397276] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43763.387215] (0)[0:swapper/0][printk_delayed:start]
+<4>[43763.387247] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43763377234787]
+<4>[43763.387255] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43763377246710]
+<4>[43763.387263] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43763377250940]
+<4>[43763.387270] (0)[0:swapper/0][thread:77][RT:43763377259863] 2016-09-23 00:42:50.463734 UTC; android time 2016-09-23 03:42:50.463734
+<4>[43763.387297] (0)[0:swapper/0][printk_delayed:done]
+<6>[43770.024245] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43770.026557] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43770.027906] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43770.029072] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43772.417240] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43772.417265] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43772.417280] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43779.526706] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43780.025117] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43780.026000] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43780.026806] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43780.028625] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43782.437237] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43782.437262] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43782.437278] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43783.397207] (0)[0:swapper/0][printk_delayed:start]
+<4>[43783.397236] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43783387224865]
+<4>[43783.397244] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43783387236480]
+<4>[43783.397252] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43783387241172]
+<4>[43783.397259] (0)[0:swapper/0][thread:77][RT:43783387249249] 2016-09-23 00:43:10.473723 UTC; android time 2016-09-23 03:43:10.473723
+<4>[43783.397286] (0)[0:swapper/0][printk_delayed:done]
+<6>[43790.024353] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43790.026700] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43790.028080] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43790.029321] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43792.457221] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43792.457246] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43792.457261] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43800.024336] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43800.026692] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43800.028069] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43800.029242] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43802.477246] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43802.477271] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43802.477287] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43803.407216] (0)[0:swapper/0][printk_delayed:start]
+<4>[43803.407248] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43803397215327]
+<4>[43803.407256] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43803397227327]
+<4>[43803.407264] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43803397232250]
+<4>[43803.407271] (0)[0:swapper/0][thread:77][RT:43803397240635] 2016-09-23 00:43:30.483715 UTC; android time 2016-09-23 03:43:30.483715
+<4>[43803.407298] (0)[0:swapper/0][printk_delayed:done]
+<6>[43810.024297] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43810.026498] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43810.028027] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43810.029222] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43812.497224] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43812.497248] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43812.497264] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<1>[43819.426640] (0)[0:swapper/0]dpidle_cnt[0]=0, rgidle_cnt[0]=4407275
+<1>[43819.426666] (0)[0:swapper/0]dpidle_cnt[1]=0, rgidle_cnt[1]=879327
+<1>[43819.426682] (0)[0:swapper/0][0]dpidle_block_cnt[by_cpu]=2174964
+<1>[43819.426697] (0)[0:swapper/0][1]dpidle_block_cnt[by_clk]=3109999
+<1>[43819.426711] (0)[0:swapper/0][2]dpidle_block_cnt[by_tmr]=0
+<1>[43819.426725] (0)[0:swapper/0][3]dpidle_block_cnt[by_oth]=0
+<1>[43819.426742] (0)[0:swapper/0][00]dpidle_condition_mask[CG_MIXED]=0x00000000		dpidle_block_mask[CG_MIXED]=0x00000000
+<1>[43819.426763] (0)[0:swapper/0][01]dpidle_condition_mask[CG_MPLL ]=0x00000000		dpidle_block_mask[CG_MPLL ]=0x00000000
+<1>[43819.426784] (0)[0:swapper/0][02]dpidle_condition_mask[CG_UPLL ]=0x00000000		dpidle_block_mask[CG_UPLL ]=0x00000000
+<1>[43819.426805] (0)[0:swapper/0][03]dpidle_condition_mask[CG_CTRL0]=0x000f002f		dpidle_block_mask[CG_CTRL0]=0x00000001
+<1>[43819.426827] (0)[0:swapper/0][04]dpidle_condition_mask[CG_CTRL1]=0x80a9b2fd		dpidle_block_mask[CG_CTRL1]=0x00002000
+<1>[43819.426848] (0)[0:swapper/0][05]dpidle_condition_mask[CG_MMSYS0]=0x003fffff		dpidle_block_mask[CG_MMSYS0]=0x00000000
+<1>[43819.426870] (0)[0:swapper/0][06]dpidle_condition_mask[CG_MMSYS1]=0x0000007f		dpidle_block_mask[CG_MMSYS1]=0x00000000
+<1>[43819.426891] (0)[0:swapper/0][07]dpidle_condition_mask[CG_MFG  ]=0x00000000		dpidle_block_mask[CG_MFG  ]=0x00000000
+<1>[43819.426912] (0)[0:swapper/0][08]dpidle_condition_mask[CG_AUDIO]=0x00000000		dpidle_block_mask[CG_AUDIO]=0x00000000
+<6>[43820.024483] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43820.026845] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43820.028241] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43820.029415] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43822.517230] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43822.517255] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43822.517270] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43823.417202] (0)[0:swapper/0][printk_delayed:start]
+<4>[43823.417231] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43823407212482]
+<4>[43823.417238] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43823407224559]
+<4>[43823.417247] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43823407229175]
+<4>[43823.417254] (0)[0:swapper/0][thread:77][RT:43823407237867] 2016-09-23 00:43:50.493712 UTC; android time 2016-09-23 03:43:50.493712
+<4>[43823.417280] (0)[0:swapper/0][printk_delayed:done]
+<6>[43830.024498] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43830.026846] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43830.028255] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43830.029437] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43832.537242] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43832.537266] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43832.537281] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<6>[43839.526691] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43840.024523] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43840.026713] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43840.028321] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43840.029744] (0)[113:healthd]healthd: battery l=100 l2=50 v=4164 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43842.557242] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43842.557268] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43842.557283] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<4>[43843.427209] (0)[0:swapper/0][printk_delayed:start]
+<4>[43843.427239] (0)[0:swapper/0][WDK], local_bit:0x0, cpu:0,RT[43843417224714]
+<4>[43843.427247] (0)[0:swapper/0][WDK], local_bit:0x1, cpu:0, check bit0x:1,RT[43843417236637]
+<4>[43843.427255] (0)[0:swapper/0][WDK]: kick Ex WDT,RT[43843417241484]
+<4>[43843.427262] (0)[0:swapper/0][thread:77][RT:43843417249637] 2016-09-23 00:44:10.503724 UTC; android time 2016-09-23 03:44:10.503724
+<4>[43843.427289] (0)[0:swapper/0][printk_delayed:done]
+<6>[43850.024400] (0)[113:healthd]healthd: battery l=100 l2=50 v=4163 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43850.038440] (0)[113:healthd]healthd: battery l=100 l2=50 v=4163 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43850.040548] (0)[113:healthd]healthd: battery l=100 l2=50 v=4163 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<6>[43850.041454] (0)[113:healthd]healthd: battery l=100 l2=50 v=4163 t=22.0 h=2 st=5 st2=4 ext=0 chg=u
+<7>[43852.577233] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(0): 16
+<7>[43852.577257] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(1): 16
+<7>[43852.577272] (0)[0:swapper/0][ccci/ctl] (1)get_txpower(2): 16
+<7>[43858.592520] (0)[174:adbd][174:174:adbd] fork [20924:20924:adbd] flag=0x11
+<7>[43858.594255] (0)[20924:sh][exec] /system/bin/sh(3)
+<7>[43858.600845] (0)[20924:su][exec] /system/xbin/su(3)
+<7>[43858.603403] (0)[407:daemonsu][407:407:daemonsu] fork [407:20925:daemonsu] flag=0x50f00
+<7>[43858.605435] (0)[15982:daemonsu][15982:15982:daemonsu] fork [15982:20926:daemonsu] flag=0x50f00
+<7>[43858.605602] (0)[20925:daemonsu][20925:daemonsu] exit
+<7>[43858.607578] (0)[20926:daemonsu][15982:20926:daemonsu] fork [20927:20927:daemonsu] flag=0x11
+<7>[43858.612486] (0)[20927:daemonsu][20927:20927:daemonsu] fork [20928:20928:daemonsu] flag=0x11
+<7>[43858.613176] (0)[20928:daemonsu][20928:20928:daemonsu] fork [20929:20929:daemonsu] flag=0x11
+<7>[43858.613434] (0)[20928:daemonsu][20928:daemonsu] exit
+<7>[43858.613668] (0)[20928:daemonsu][20928:daemonsu] sig 17 to [20927:daemonsu]
+<7>[43858.619613] (0)[20927:daemonsu][20927:20927:daemonsu] fork [20930:20930:daemonsu] flag=0x11
+<7>[43858.621657] (0)[20930:tmp-mksh][exec] /tmp-mksh/tmp-mksh(3)
+<7>[43858.626380] (0)[20930:dmesg][exec] /system/bin/dmesg(3)
+<7>[43858.627755] (0)[20929:daemonsu][20929:20929:daemonsu] fork [20931:20931:daemonsu] flag=0x11

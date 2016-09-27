@@ -50,7 +50,7 @@ endif
 obj-y   += dual_ccci/
 obj-y   += accdet/
 obj-y   += vibrator/
-obj-y   += leds/
+#obj-y   += leds/
 obj-y   += wdt/
 obj-y	+= devinfo/
 obj-y	+= masp/

@@ -50,15 +50,7 @@ struct PWM_config
 typedef int (*cust_brightness_set)(int level, int div);
 typedef int (*cust_set_brightness)(int level);
 
-/*
- * name : must the same as lights HAL
- * mode : control mode
- * data :
- *    PWM:  pwm number
- *    GPIO: gpio id
- *    PMIC: enum mt65xx_led_pmic
- *    CUST: custom set brightness function pointer
-*/
+
 struct cust_mt65xx_led {
 	char                 *name;
 	enum mt65xx_led_mode  mode;

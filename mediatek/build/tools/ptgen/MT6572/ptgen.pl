@@ -111,9 +111,22 @@ else
 {
     $PRODUCT_OUT = "out/target/product/$ENV{PROJECT}";
 }
+#begin add by jinlong.sang 20150210
+my $ssv_config_file = "device/jrdcom/common/jrdssv.mk" ;
+my $ssv_enable = $ENV{BUILD_SSV};
 
+my $PART_TABLE_FILENAME ;
 #inputfiles
-my $PART_TABLE_FILENAME                = "mediatek/build/tools/ptgen/$PLATFORM/partition_table_${PLATFORM}.xls"; # excel file name
+#my $PART_TABLE_FILENAME                = "mediatek/build/tools/ptgen/$PLATFORM/partition_table_${PLATFORM}.xls"; # excel file name
+if($ssv_enable eq "true")
+{
+   $PART_TABLE_FILENAME                = "mediatek/build/tools/ptgen/$PLATFORM/partition_table_${PROJECT}_ssv.xls"; # excel file name
+}
+else
+{
+   $PART_TABLE_FILENAME                = "mediatek/build/tools/ptgen/$PLATFORM/partition_table_${PROJECT}.xls"; # excel file name
+}
+#end add by jinlong.sang 20150210
 my $PROJECT_PART_TABLE_FILENAME        = "mediatek/config/$PROJECT/partition_table_${PLATFORM}.xls";
 my $FULL_PROJECT_PART_TABLE_FILENAME   = "mediatek/config/$FULL_PROJECT/partition_table_${PLATFORM}.xls";
 my $REGION_TABLE_FILENAME = "mediatek/build/tools/emigen/$PLATFORM/MemoryDeviceList_${PLATFORM}.xls";  #eMMC region information
@@ -715,7 +728,6 @@ typedef enum  {
 	EMMC = 1,
 	NAND = 2,
 } dev_type;
-
 typedef enum {
 	USER = 0,
 	BOOT_1,
@@ -726,8 +738,6 @@ typedef enum {
 	GP_3,
 	GP_4,
 } Region;
-
-
 struct excel_info{
 	char * name;
 	unsigned long long size;
@@ -740,12 +750,10 @@ struct excel_info{
 /*MBR or EBR struct*/
 #define SLOT_PER_MBR 4
 #define MBR_COUNT 8
-
 struct MBR_EBR_struct{
 	char part_name[8];
 	int part_index[SLOT_PER_MBR];
 };
-
 extern struct MBR_EBR_struct MBR_EBR_px[MBR_COUNT];
 #endif
 __TEMPLATE
@@ -829,7 +837,10 @@ sub GenYAMLScatFile(){
 		ANDROID=>"system.img",
 		CACHE=>"cache.img",
 		USRDATA=>"userdata.img",
-		CUSTOM=>"custom.img"
+		CUSTOM=>"custom.img",
+		CUSTPACK=>"custpack.img",
+		MOBILE_INFO=>"mobile_info.img",
+
 	);
 	my %sepcial_operation_type=(
 		PRELOADER=>"BOOTLOADERS",
@@ -1304,12 +1315,10 @@ sub GenPerloaderCust_partC{
   # print $SOURCE "}\n";
 	 my $template = <<"__TEMPLATE";
 void cust_part_init(void){}
-
 part_t *cust_part_tbl(void)
 {
 	 return &platform_parts[0];
 }
-
 __TEMPLATE
 	print $SOURCE $template;
 	close $SOURCE;
@@ -1322,18 +1331,14 @@ sub GenKernel_PartitionC(){
 	
 	print $SOURCE &copyright_file_header_for_c();
 	my $template = <<"__TEMPLATE";
-
 #include <linux/mtd/mtd.h>
 #include <linux/mtd/nand.h>
 #include <linux/mtd/partitions.h>
 #include "partition_define.h"
-
-
 /*=======================================================================*/
 /* NAND PARTITION Mapping                                                  */
 /*=======================================================================*/
 static struct mtd_partition g_pasStatic_Partition[] = {
-
 __TEMPLATE
 	print $SOURCE $template;
 	for ($iter=0; $iter< $total_rows; $iter++){
@@ -1382,15 +1387,11 @@ sub GenPmt_H(){
 	print $pmt_h_fd &copyright_file_header_for_c();
 
     my $template = <<"__TEMPLATE";
-
 #ifndef _PMT_H
 #define _PMT_H
-
 #include "partition_define.h"
-
 //mt6516_partition.h has defination
 //mt6516_download.h define again, both is 20
-
 #define MAX_PARTITION_NAME_LEN 64
 #ifdef MTK_EMMC_SUPPORT
 /*64bit*/
@@ -1400,7 +1401,6 @@ typedef struct
     unsigned long long size;     						/* partition size */	
     unsigned long long offset;       					/* partition start */
     unsigned long long mask_flags;       				/* partition flags */
-
 } pt_resident;
 /*32bit*/
 typedef struct 
@@ -1409,29 +1409,21 @@ typedef struct
     unsigned long  size;     						/* partition size */	
     unsigned long  offset;       					/* partition start */
     unsigned long mask_flags;       				/* partition flags */
-
 } pt_resident32;
 #else
-
 typedef struct
 {
     unsigned char name[MAX_PARTITION_NAME_LEN];     /* partition name */
     unsigned long size;     						/* partition size */	
     unsigned long offset;       					/* partition start */
     unsigned long mask_flags;       				/* partition flags */
-
 } pt_resident;
 #endif
-
-
 #define DM_ERR_OK 0
 #define DM_ERR_NO_VALID_TABLE 9
 #define DM_ERR_NO_SPACE_FOUND 10
 #define ERR_NO_EXIST  1
-
 //Sequnce number
-
-
 //#define PT_LOCATION          4090      // (4096-80)
 //#define MPT_LOCATION        4091            // (4096-81)
 #define PT_SIG      0x50547631            //"PTv1"
@@ -1440,8 +1432,6 @@ typedef struct
 #define is_valid_mpt(buf) ((*(u32 *)(buf))==MPT_SIG)
 #define is_valid_pt(buf) ((*(u32 *)(buf))==PT_SIG)
 #define RETRY_TIMES 5
-
-
 typedef struct _DM_PARTITION_INFO
 {
     char part_name[MAX_PARTITION_NAME_LEN];             /* the name of partition */
@@ -1452,13 +1442,11 @@ typedef struct _DM_PARTITION_INFO
     unsigned char dl_selected;                                  /* dl_selected is 0: this partition is NOT selected to download */
                                                         /* dl_selected is 1: this partition is selected to download */
 } DM_PARTITION_INFO;
-
 typedef struct {
     unsigned int pattern;
     unsigned int part_num;                              /* The actual number of partitions */
     DM_PARTITION_INFO part_info[PART_MAX_COUNT];
 } DM_PARTITION_INFO_PACKET;
-
 typedef struct {
 	int sequencenumber:8;
 	int tool_or_sd_update:8;
@@ -1467,7 +1455,6 @@ typedef struct {
 	int pt_changed:4;
 	int pt_has_space:4;
 } pt_info;
-
 #endif
     
 __TEMPLATE
@@ -1548,20 +1535,14 @@ sub GenLK_MT_PartitionH(){
 	print $SOURCE &copyright_file_header_for_c();
 
 	my $template = <<"__TEMPLATE";
-
 #ifndef __MT_PARTITION_H__
 #define __MT_PARTITION_H__
-
-
 #include <platform/part.h>
 #include "partition_define.h"
 #include <platform/mt_typedefs.h>
-
 #define NAND_WRITE_SIZE	 2048
-
 #define BIMG_HEADER_SZ				(0x800)
 #define MKIMG_HEADER_SZ				(0x200)
-
 #define BLK_BITS         (9)
 #define BLK_SIZE         (1 << BLK_BITS)
 #ifdef MTK_EMMC_SUPPORT
@@ -1571,7 +1552,6 @@ sub GenLK_MT_PartitionH(){
 #endif
 #define PART_KERNEL     "KERNEL"
 #define PART_ROOTFS     "ROOTFS"
-
 __TEMPLATE
 	print $SOURCE $template;
 	for ($iter=0; $iter< $total_rows; $iter++){
@@ -1594,7 +1574,6 @@ __TEMPLATE
 	u8	au1OOB[64];
 	u8*	pDataBuf;
 };
-
 typedef union {
     struct {    
         unsigned int magic;        /* partition magic */
@@ -1603,14 +1582,12 @@ typedef union {
     } info;
     unsigned char data[BLK_SIZE];
 } part_hdr_t;
-
 typedef struct {
     unsigned char *name;        /* partition name */
     unsigned long  blknum;      /* partition blks */
     unsigned long  flags;       /* partition flags */
     unsigned long  startblk;    /* partition start blk */
 } part_t;
-
 struct part_name_map{
 	char fb_name[32]; 	/*partition name used by fastboot*/	
 	char r_name[32];  	/*real partition name*/
@@ -1619,9 +1596,7 @@ struct part_name_map{
 	int is_support_erase;	/*partition support erase in fastboot*/
 	int is_support_dl;	/*partition support download in fastboot*/
 };
-
 typedef struct part_dev part_dev_t;
-
 struct part_dev {
     int init;
     int id;
@@ -1661,7 +1636,6 @@ extern u64 emmc_read(u64 offset, void *data, u64 size);
 extern int emmc_erase(u64 offset, u64 size);
 extern unsigned long partition_reserve_size(void);
 #endif /* __MT_PARTITION_H__ */
-
 __TEMPLATE
 	print $SOURCE $template;
 	close $SOURCE;

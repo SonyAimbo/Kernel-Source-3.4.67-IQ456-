@@ -14,7 +14,7 @@
 # ***********************************************************
 # Имя проекта, смотреть в mediatek/config
 # mt65xx и т.п. не является названием проекта, это платформа (не путать)
-PROJECT_NAME="a369i"
+PROJECT_NAME="fly_iq456"
 # Тулчейн
 TOOLCHAIN_PATH="/home/shar/android/source/kk_fly_iq456/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-"
 

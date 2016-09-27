@@ -400,12 +400,10 @@ int mt_wifi_suspend(pm_message_t state)
             RFKILL: set wifi and bt suspend by default in probe()
             MT6573-SD: sd host is added to MMC stack and suspend is ZERO by default
             (which means NOT suspended).
-
             When boot up, RFKILL will set wifi off and this function gets
             called. In order to successfully resume wifi at 1st time, pm_cb here
             shall be called once to let MT6573-SD do sd host suspend and remove
             sd host from MMC. Then wifi can be turned on successfully.
-
             Boot->SD host added to MMC (suspend=0)->RFKILL set wifi off
             ->SD host removed from MMC (suspend=1)->RFKILL set wifi on
             */
@@ -463,12 +461,10 @@ EXPORT_SYMBOL(mt_wifi_power_off);
 #define MSDC_SDIO_FLAG    (MSDC_EXT_SDIO_IRQ | MSDC_HIGHSPEED)
 
 #ifdef CONFIG_EARLY_LINUX_PORTING
-#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_HIGHSPEED)
-//#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_REMOVABLE | MSDC_HIGHSPEED)
+#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_REMOVABLE | MSDC_HIGHSPEED)
 #define MSDC_EMMC_FLAG	  (MSDC_SYS_SUSPEND | MSDC_HIGHSPEED)
 #else
-#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_HIGHSPEED| MSDC_UHS1 |MSDC_DDR)
-//#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_CD_PIN_EN | MSDC_REMOVABLE | MSDC_HIGHSPEED| MSDC_UHS1 |MSDC_DDR)
+#define MSDC_SDCARD_FLAG  (MSDC_SYS_SUSPEND | MSDC_CD_PIN_EN | MSDC_REMOVABLE | MSDC_HIGHSPEED| MSDC_UHS1 |MSDC_DDR)
 #define MSDC_EMMC_FLAG	  (MSDC_SYS_SUSPEND | MSDC_HIGHSPEED | MSDC_UHS1 |MSDC_DDR)
 #endif
 
@@ -568,7 +564,7 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .cmdrddly		    = 0,        
         .host_function	= MSDC_SD,
         .boot			      = 0,
-        .cd_level		    = MSDC_CD_LOW,
+        .cd_level		    = MSDC_CD_HIGH,
     
     };
     #endif
@@ -614,9 +610,9 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .clk_drv        = 4, //20mA for SD20, 15mA for SDR50, DDR50
         .cmd_drv        = 4, //20mA for SD20, 15mA for SDR50, DDR50
         .dat_drv        = 4, //20mA for SD20, 15mA for SDR50, DDR50
-        .clk_drv_sd_18	= 6, //21mA for SDR104
-        .cmd_drv_sd_18	= 6, //21mA for SDR104
-        .dat_drv_sd_18	= 6, //21mA for SDR104
+        .clk_drv_sd_18	= 5, //18mA for SDR104
+        .cmd_drv_sd_18	= 5, //18mA for SDR104
+        .dat_drv_sd_18	= 5, //18mA for SDR104
         .data_pins      = 4,
         .data_offset    = 0,
         .flags          = MSDC_SDCARD_FLAG,
@@ -633,7 +629,7 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .cmdrddly		    = 0,	    
         .host_function	= MSDC_SD,
         .boot			= 0,
-        .cd_level		= MSDC_CD_LOW,
+        .cd_level		= MSDC_CD_HIGH,
     };
     #endif
 #endif
@@ -699,7 +695,7 @@ struct msdc_hw msdc2_hw = {
 			.cmdrddly		= 0,
     .host_function	= MSDC_SD,
     .boot			= 0,
-    .cd_level		= MSDC_CD_LOW,
+    .cd_level		= MSDC_CD_HIGH,
 };
     #endif
 #endif

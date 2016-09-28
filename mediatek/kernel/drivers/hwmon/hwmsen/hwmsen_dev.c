@@ -38,8 +38,6 @@
 #include <linux/wakelock.h>
 //add for fix resume issue end
 
-#include <cust_alsps.h>
-
 #define SENSOR_INVALID_VALUE -1
 #define MAX_CHOOSE_G_NUM 5
 #define MAX_CHOOSE_M_NUM 5
@@ -47,9 +45,6 @@
 static void hwmsen_early_suspend(struct early_suspend *h);
 static void hwmsen_late_resume(struct early_suspend *h);
 static void update_workqueue_polling_rate(int newDelay);
-
-static struct workqueue_struct * sensor_workqueue = NULL;
-
 /******************************************************************************
  * structure / enumeration / macro / definition
  *****************************************************************************/
@@ -77,6 +72,7 @@ static struct sensor_init_info* gsensor_init_list[MAX_CHOOSE_G_NUM]= {0}; //modi
 static char msensor_name[25];
 static struct sensor_init_info* msensor_init_list[MAX_CHOOSE_G_NUM]= {0}; //modified
 #endif
+
 #if defined(MTK_AUTO_DETECT_ALSPS)
 static char alsps_name[25];
 static struct sensor_init_info* alsps_init_list[MAX_CHOOSE_G_NUM]= {0}; //modified
@@ -172,7 +168,7 @@ static void hwmsen_work_func(struct work_struct *work)
 	time.tv_sec = time.tv_nsec = 0;    
 	time = get_monotonic_coarse(); 
 	nt = time.tv_sec*1000000000LL+time.tv_nsec;
-	//mutex_lock(&obj_data.lock);
+	mutex_lock(&obj_data.lock);
 	for(idx = 0; idx < MAX_ANDROID_SENSOR_NUM; idx++)
 	{
 		cxt = obj->dc->cxt[idx];
@@ -187,14 +183,11 @@ static void hwmsen_work_func(struct work_struct *work)
 		{
 			if(obj_data.data_updata[idx] == 1)
 			{
-				mutex_lock(&obj_data.lock);
 				event_type |= (1 << idx);
 				obj_data.data_updata[idx] = 0;
-				mutex_unlock(&obj_data.lock);
 			}
 			continue;
 		}
-		
 		
 		//added to surpport set delay to specified sensor
 		if(cxt->delayCount > 0)
@@ -213,8 +206,12 @@ static void hwmsen_work_func(struct work_struct *work)
 		  }
 		}
 		
+        //add wake lock to make sure data can be read before system suspend
+        wake_lock(&(obj->read_data_wake_lock));
 		err = cxt->obj.sensor_operate(cxt->obj.self,SENSOR_GET_DATA, NULL, 0, 
 			&sensor_data, sizeof(hwm_sensor_data), &out_size);
+        wake_unlock(&(obj->read_data_wake_lock));
+      
 		
 		if(err)
 		{
@@ -228,14 +225,12 @@ static void hwmsen_work_func(struct work_struct *work)
 			{
 				// data changed, update the data
 				if(sensor_data.values[0] != obj_data.sensors_data[idx].values[0])
-				{
-					mutex_lock(&obj_data.lock);
+				{					
 					obj_data.sensors_data[idx].values[0] = sensor_data.values[0];
 					obj_data.sensors_data[idx].value_divide = sensor_data.value_divide;
 					obj_data.sensors_data[idx].status = sensor_data.status;
 					obj_data.sensors_data[idx].time = nt;
 					event_type |= (1 << idx);
-					mutex_unlock(&obj_data.lock);
 					//HWM_LOG("get %d sensor, values: %d!\n", idx, sensor_data.values[0]);
 				}
 			}
@@ -249,10 +244,8 @@ static void hwmsen_work_func(struct work_struct *work)
 				    if( 0 == sensor_data.values[0] && 0==sensor_data.values[1] 
 						&& 0 == sensor_data.values[2])
 				    {
-				    	
 				       continue;
 				    }
-					mutex_lock(&obj_data.lock);
 					obj_data.sensors_data[idx].values[0] = sensor_data.values[0];
 					obj_data.sensors_data[idx].values[1] = sensor_data.values[1];
 					obj_data.sensors_data[idx].values[2] = sensor_data.values[2];
@@ -260,16 +253,15 @@ static void hwmsen_work_func(struct work_struct *work)
 					obj_data.sensors_data[idx].status = sensor_data.status;
 					obj_data.sensors_data[idx].time = nt;
 					event_type |= (1 << idx);
-					mutex_unlock(&obj_data.lock);
 					//HWM_LOG("get %d sensor, values: %d, %d, %d!\n", idx, 
 						//sensor_data.values[0], sensor_data.values[1], sensor_data.values[2]);
 				}
-			}
+			}			
 		}			
 	}
 
 	//
-	//mutex_unlock(&obj_data.lock);
+	mutex_unlock(&obj_data.lock);
 
 	if(enable_again == true)
 	{
@@ -323,7 +315,16 @@ static void hwmsen_work_func(struct work_struct *work)
 
 	if(obj->dc->polling_running == 1)
 	{
-		mod_timer(&obj->timer, jiffies + atomic_read(&obj->delay)/(1000/HZ)); 
+	    if(1 == atomic_read(&hwm_obj->early_suspend))
+	    {
+	       // slow down polling rate at early suspend  let system have chance to sleep
+	       mod_timer(&obj->timer, jiffies + (HZ/2));
+		   HWM_LOG("hwm_dev early suspend work polling\n");
+	    }
+		else
+		{
+		  mod_timer(&obj->timer, jiffies + atomic_read(&obj->delay)/(1000/HZ)); 
+		}
 	}
 }
 
@@ -398,7 +399,7 @@ static void hwmsen_poll(unsigned long data)
 	struct hwmdev_object *obj = (struct hwmdev_object *)data;
 	if(obj != NULL)
 	{
-		queue_work(sensor_workqueue, &obj->report);
+		schedule_work(&obj->report);
 	}
 }
 /*----------------------------------------------------------------------------*/
@@ -419,7 +420,6 @@ static struct hwmdev_object *hwmsen_alloc_object(void)
 	obj->active_sensor = 0;
 	atomic_set(&obj->delay, 200); /*5Hz*/// set work queue delay time 200ms
 	atomic_set(&obj->wake, 0);
-	sensor_workqueue = create_singlethread_workqueue("sensor_polling");
 	INIT_WORK(&obj->report, hwmsen_work_func);
 	init_timer(&obj->timer);
 	obj->timer.expires	= jiffies + atomic_read(&obj->delay)/(1000/HZ);
@@ -520,28 +520,15 @@ static int hwmsen_enable(struct hwmdev_object *obj, int sensor, int enable)
 	
 	if(enable == 1)
 	{
-//{@for mt6582 blocking issue work around		
-//		if(sensor == 7){
-//			HWM_LOG("P-sensor disable LDO low power\n");
-//			pmic_ldo_suspend_enable(0);
-//			}
-//@}
 		enable_again = true;
 		obj->active_data_sensor |= sensor_type;
 		if((obj->active_sensor & sensor_type) == 0)	// no no-data active
 		{		
 			if (cxt->obj.sensor_operate(cxt->obj.self, SENSOR_ENABLE, &enable,sizeof(int), NULL, 0, NULL) != 0)
 			{
-				if (cxt->obj.sensor_operate(cxt->obj.self, SENSOR_ENABLE, &enable,sizeof(int), NULL, 0, NULL) != 0)
-				{
-					if (cxt->obj.sensor_operate(cxt->obj.self, SENSOR_ENABLE, &enable,sizeof(int), NULL, 0, NULL) != 0)
-					{
-						HWM_ERR("activate sensor(%d) 3 times err = %d\n", sensor, err);
-						err = -EINVAL;
-						goto exit;
-					}
-				}
-				
+				HWM_ERR("activate sensor(%d) err = %d\n", sensor, err);
+				err = -EINVAL;
+				goto exit;
 			}
 
 			atomic_set(&cxt->enable, 1);			
@@ -560,13 +547,6 @@ static int hwmsen_enable(struct hwmdev_object *obj, int sensor, int enable)
 	}
 	else
 	{
-//{@for mt6582 blocking issue work around
-//		if(sensor == 7){
-//			HWM_LOG("P-sensor enable LDO low power\n");
-//			pmic_ldo_suspend_enable(1);
-//
-//			}
-//@}
 		obj->active_data_sensor &= ~sensor_type;
 		if((obj->active_sensor & sensor_type) == 0)	// no no-data active
 		{
@@ -733,12 +713,10 @@ static ssize_t hwmsen_store_active(struct device* dev, struct device_attribute *
 	printk("sensor test: hwmsen_store_active function!\n");
     struct hwmdev_object *devobj = (struct hwmdev_object*)dev_get_drvdata(dev);
     int sensor, enable, err, idx;
-
     if (!devobj || !devobj->dc) {
         HWM_ERR("null pointer!!\n");
         return count;
     }
-
     if (!strncmp(buf, "all-start", 9)) {
         for (idx = 0; idx < C_MAX_HWMSEN_NUM; idx++)
             hwmsen_enable(devobj, idx, 1);
@@ -782,12 +760,10 @@ printk("sensor test: hwmsen_show_delay function!\n");
         HWM_ERR("null pointer!!\n");
         return count;
     }
-
     if (1 != sscanf(buf, "%d", &delay)) {
         HWM_ERR("invalid format!!\n");
         return count;
     }
-
     atomic_set(&devobj->delay, delay);
    */
     return count;
@@ -799,7 +775,6 @@ static ssize_t hwmsen_show_wake(struct device* dev,
 /*
 	printk("sensor test: hwmsen_show_wake function!\n");
     struct hwmdev_object *devobj = (struct hwmdev_object*)dev_get_drvdata(dev);
-
     if (!devobj || !devobj->dc) {
         HWM_ERR("null pointer!!\n");
         return 0;
@@ -820,12 +795,10 @@ printk("sensor test: hwmsen_store_wake function!\n");
         HWM_ERR("null pointer!!\n");
         return count;
     }
-
     if (1 != sscanf(buf, "%d", &wake)) {
         HWM_ERR("invalid format!!\n");
         return count;
     }
-
     if ((err = hwmsen_wakeup(devobj))) {
         HWM_ERR("wakeup sensor fail, %d\n", err);
         return count;
@@ -865,20 +838,11 @@ static ssize_t hwmsen_store_trace(struct device* dev,
 	return count;
 }                                                      
 /*----------------------------------------------------------------------------*/
-static ssize_t hwmsen_show_sensordevnum(struct device *dev, 
-                                  struct device_attribute *attr, char *buf)
-{
-	char *devname = NULL;
-		devname = dev_name(&hwm_obj->idev->dev);
-
-	return snprintf(buf, PAGE_SIZE, "%s\n", devname+5);
-}
 DEVICE_ATTR(hwmdev,     S_IWUSR | S_IRUGO, hwmsen_show_hwmdev, NULL);
 DEVICE_ATTR(active,     S_IWUSR | S_IRUGO, hwmsen_show_hwmdev, hwmsen_store_active);
 DEVICE_ATTR(delay,      S_IWUSR | S_IRUGO, hwmsen_show_delay,  hwmsen_store_delay);
 DEVICE_ATTR(wake,       S_IWUSR | S_IRUGO, hwmsen_show_wake,   hwmsen_store_wake);
 DEVICE_ATTR(trace,      S_IWUSR | S_IRUGO, hwmsen_show_trace,  hwmsen_store_trace);
-DEVICE_ATTR(hwmsensordevnum,      S_IWUSR | S_IRUGO, hwmsen_show_sensordevnum,  NULL);
 /*----------------------------------------------------------------------------*/
 static struct device_attribute *hwmsen_attr_list[] =
 {
@@ -887,7 +851,6 @@ static struct device_attribute *hwmsen_attr_list[] =
 	&dev_attr_delay,
 	&dev_attr_wake,
 	&dev_attr_trace,
-	&dev_attr_hwmsensordevnum,
 };
 
 
@@ -1378,6 +1341,7 @@ EXPORT_SYMBOL_GPL(hwmsen_msensor_add);
 
 int hwmsen_gsensor_remove(struct platform_device *pdev)
 {
+    //int err =0;
 	int i=0;
 	for(i = 0; i < MAX_CHOOSE_G_NUM; i++)
 	{
@@ -1472,11 +1436,11 @@ EXPORT_SYMBOL_GPL(hwmsen_gsensor_add);
 
 #endif
 
-#if defined(MTK_AUTO_DETECT_ALSPS)
+#if defined(MTK_AUTO_DETECT_ALSPS)//
 
-int hwmsen_alsps_sensor_remove(struct platform_device *pdev)
+int hwmsen_alsps_remove(struct platform_device *pdev)
 {
-    int err =0;
+    //int err =0;
 	int i=0;
 	for(i = 0; i < MAX_CHOOSE_G_NUM; i++)
 	{
@@ -1484,7 +1448,7 @@ int hwmsen_alsps_sensor_remove(struct platform_device *pdev)
 	   {
 	      if(NULL == alsps_init_list[i]->uninit)
 	      {
-	        HWM_LOG(" hwmsen_alsps_sensor_remove null pointer \n");
+	        HWM_LOG(" hwmsen_alsps_remove null pointer +\n");
 	        return -1;
 	      }
 	      alsps_init_list[i]->uninit();
@@ -1493,42 +1457,59 @@ int hwmsen_alsps_sensor_remove(struct platform_device *pdev)
     return 0;
 }
 
-static int alsps_sensor_probe(struct platform_device *pdev) 
+static int alsps_probe(struct platform_device *pdev) 
 {
     int i =0;
 	int err=0;
-	HWM_LOG(" als_ps sensor_probe +\n");
+	HWM_LOG(" alsps_probe +\n");
+
+	//
+/*
+     for(i = 0; i < MAX_CHOOSE_G_NUM; i++)
+     {
+       HWM_LOG(" gsensor_init_list[i]=%d\n",gsensor_init_list[i]);
+     }
+*/
+	//
 	for(i = 0; i < MAX_CHOOSE_G_NUM; i++)
 	{
-	  if(NULL != alsps_init_list[i])
+	  HWM_LOG(" i=%d\n",i);
+	  if(0 != alsps_init_list[i])
 	  {
+	    HWM_LOG(" !!!!!!!!\n");
 	    err = alsps_init_list[i]->init();
 		if(0 == err)
 		{
 		   strcpy(alsps_name,alsps_init_list[i]->name);
-		   HWM_LOG(" alsps sensor %s probe ok\n", alsps_name);
+		   HWM_LOG(" alsps %s probe ok\n", alsps_name);
 		   break;
 		}
 	  }
+	}
+
+	if(i == MAX_CHOOSE_G_NUM)
+	{
+	   HWM_LOG(" alsps probe fail\n");
 	}
 	return 0;
 }
 
 
-static struct platform_driver alsps_sensor_driver = {
-	.probe      = alsps_sensor_probe,
-	.remove     = hwmsen_alsps_sensor_remove,    
+static struct platform_driver alsps_driver = {
+	.probe      = alsps_probe,
+	.remove     = hwmsen_alsps_remove,    
 	.driver     = 
 	{
 		.name  = "als_ps",
+//		.owner = THIS_MODULE,
 	}
 };
 
-int hwmsen_alsps_sensor_add(struct sensor_init_info* obj) 
+ int hwmsen_alsps_add(struct sensor_init_info* obj) 
 {
     int err=0;
 	int i =0;
-
+	
 	HWM_FUN(f);
 
 	for(i =0; i < MAX_CHOOSE_G_NUM; i++ )
@@ -1541,7 +1522,7 @@ int hwmsen_alsps_sensor_add(struct sensor_init_info* obj)
 		     HWM_ERR("kzalloc error");
 		     return -1;
 		  }
-		  obj->platform_diver_addr = &alsps_sensor_driver;
+		  obj->platform_diver_addr = &alsps_driver;
 	      alsps_init_list[i] = obj;
 		  
 		  break;
@@ -1550,9 +1531,11 @@ int hwmsen_alsps_sensor_add(struct sensor_init_info* obj)
 		
 	return err;
 }
-EXPORT_SYMBOL_GPL(hwmsen_alsps_sensor_add);
+EXPORT_SYMBOL_GPL(hwmsen_alsps_add);
 
 #endif
+
+
 
 /*----------------------------------------------------------------------------*/
 static int __init hwmsen_init(void) 
@@ -1581,12 +1564,12 @@ static int __init hwmsen_init(void)
 		}
 #endif
 
-#if defined(MTK_AUTO_DETECT_ALSPS)
-			if(platform_driver_register(&alsps_sensor_driver))
-			{
-				HWM_ERR("failed to register alsps_sensor_driver driver");
-				return -ENODEV;
-			}
+#if defined(MTK_AUTO_DETECT_ALSPS)    
+		if(platform_driver_register(&alsps_driver))	
+		{
+		HWM_ERR("failed to register alsps driver");
+		return -ENODEV;
+		}
 #endif
 
 

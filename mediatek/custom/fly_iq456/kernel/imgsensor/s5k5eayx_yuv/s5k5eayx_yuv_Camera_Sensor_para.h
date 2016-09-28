@@ -24,6 +24,11 @@
  * $Modtime:$
  * $Log:$
  *
+ * 05 25 2010 sean.cheng
+ * [ALPS00001357][Meta]CameraTool 
+ * .
+ * Add HI704 YUV sensor driver support
+ *
  * Mar 4 2010 mtk70508
  * [DUMA00154792] Sensor driver
  * 

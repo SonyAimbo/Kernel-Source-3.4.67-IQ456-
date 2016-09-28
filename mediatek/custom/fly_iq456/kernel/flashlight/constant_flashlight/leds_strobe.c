@@ -23,8 +23,9 @@
 #include <linux/xlog.h>
 #include <mach/upmu_common.h>
 
-#include <mach/mt_gpio.h>		// For gpio control
-#include <mach/mt_pwm.h>
+#include "cust_gpio_usage.h"
+#include <mach/mt_gpio.h>
+#include <mach/mt_pm_ldo.h>
 
 /******************************************************************************
  * Debug configuration
@@ -74,149 +75,77 @@ Functions
 *****************************************************************************/
 static void work_timeOutFunc(struct work_struct *data);
 
-#define LEDS_TORCH_MODE 		0
-#define LEDS_FLASH_MODE 		1
-#define LEDS_CUSTOM_MODE_THRES 	20
-
-#ifndef GPIO_CAMERA_FLASH_EN_PIN 
-#define GPIO_CAMERA_FLASH_EN_PIN GPIO24
-#endif
-
-#ifndef GPIO_CAMERA_FLASH_EN_PIN_M_GPIO 
-#define GPIO_CAMERA_FLASH_EN_PIN_M_GPIO GPIO_MODE_00
-#endif
-
-#ifndef GPIO_CAMERA_FLASH_MODE_PIN 
-#define GPIO_CAMERA_FLASH_MODE_PIN GPIO25
-#endif
-
-#ifndef GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO 
-#define GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO GPIO_MODE_00
-#endif
-
-//start add by ljs 20130703
-int flashpwm = 0;
-int fl_set_pwm_enable(int mode)
-{
-	struct pwm_spec_config pwm_setting;
-	
-	pwm_setting.pwm_no = PWM1; 
-	pwm_setting.mode = PWM_MODE_FIFO; 
-	pwm_setting.clk_div = CLK_DIV128;
-	pwm_setting.clk_src = PWM_CLK_NEW_MODE_BLOCK;	
-	
-	pwm_setting.PWM_MODE_FIFO_REGS.HDURATION = 10;
-	pwm_setting.PWM_MODE_FIFO_REGS.LDURATION = 10;	
-	pwm_setting.PWM_MODE_FIFO_REGS.IDLE_VALUE = 0;
-	pwm_setting.PWM_MODE_FIFO_REGS.GUARD_VALUE = 1;
-	pwm_setting.PWM_MODE_FIFO_REGS.STOP_BITPOS_VALUE = 63;
-	pwm_setting.PWM_MODE_FIFO_REGS.GDURATION = 0;
-	pwm_setting.PWM_MODE_FIFO_REGS.WAVE_NUM = 0;
-  
-	pwm_setting.PWM_MODE_FIFO_REGS.SEND_DATA0 = 0xFFFFFFFF;
-	if(mode==0) pwm_setting.PWM_MODE_FIFO_REGS.SEND_DATA1 = 0x0000003F;
-        else pwm_setting.PWM_MODE_FIFO_REGS.SEND_DATA1 = 0xFFFFFFFF;
-	pwm_set_spec_config(&pwm_setting);
-	return 0;	
-}
-
-int fl_set_pwm_disable(void)
-{
-	mt_pwm_disable(PWM1, false);
-	return 0;	
-}
-//end add by ljs 20130703
+extern void flashlight_isink_set_pmic(u32 level);  
 
 int FL_enable(void)
 {
-	PK_DBG("FL_enable");	
-	fl_set_pwm_enable(flashpwm);
-	mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN, 1);
-	
-//	upmu_set_rg_bst_drv_1m_ck_pdn(0);
-//	upmu_set_flash_en(1);
+    if(!g_strobe_On)
+      {
+      	//mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_OUT_ZERO);//FLASH pin:0=torch mode,1=flash mode  
+		//mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN, GPIO_OUT_ONE);  	
+	    //if(hwPowerOn(MT6323_POWER_LDO_VGP1, VOL_3300, "KD_CAMERA_FLASHLIGHT"))
+	    flashlight_isink_set_pmic(255);
+	      g_strobe_On=1;
+      }
     return 0;
 }
 
 int FL_disable(void)
 {
-	PK_DBG("FL_disable");
-	fl_set_pwm_disable();
-	mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN, 0);	
-//	upmu_set_flash_en(0);
-	//upmu_set_rg_bst_drv_1m_ck_pdn(1);
+   if(g_strobe_On)
+   	{
+   		//mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_OUT_ZERO);  
+		//mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN, GPIO_OUT_ZERO);  
+	    //if(hwPowerDown(MT6323_POWER_LDO_VGP1, "KD_CAMERA_FLASHLIGHT"))
+	    flashlight_isink_set_pmic(0);
+	  	g_strobe_On=0;
+   	}
     return 0;
 }
 
-#define LEDS_LOWHIGH_END_FLAG  1  // 0 low-end led    1 high-end led    2 perfect-end
 int FL_dim_duty(kal_uint32 duty)
 {
-	PK_DBG("FL_dim_duty %d, thres %d", duty, LEDS_CUSTOM_MODE_THRES);
-	
-	PK_DBG("FL_dim_duty LEDS_LOWHIGH_END_FLAG %d", LEDS_LOWHIGH_END_FLAG);
-      #if (LEDS_LOWHIGH_END_FLAG == 0)
-	if(duty < 10) { //LEDS_CUSTOM_MODE_THRES==20,torch mode:duty==6,flash mode:duty==12
-		flashpwm = 0;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_TORCH_MODE);
-	} else {
-		flashpwm = 1;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_TORCH_MODE);
-	}
-      #elif (LEDS_LOWHIGH_END_FLAG == 1)
-	if(duty < 10) { //LEDS_CUSTOM_MODE_THRES==20,torch mode:duty==6,flash mode:duty==12
-		flashpwm = 1;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_TORCH_MODE);
-	} else {
-		flashpwm = 1;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_FLASH_MODE);
-	}
-      #elif (LEDS_LOWHIGH_END_FLAG == 2)
-	if(duty < 10) { //LEDS_CUSTOM_MODE_THRES==20,torch mode:duty==6,flash mode:duty==12
-		flashpwm = 0;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_TORCH_MODE);
-	} else {
-		flashpwm = 1;
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_FLASH_MODE);	
-	}
-      #endif
-
-	if((g_timeOutTimeMs == 0) && (duty > LEDS_CUSTOM_MODE_THRES))
-	{
-		flashpwm = 0;
-		PK_ERR("FL_dim_duty %d > thres %d, FLASH mode but timeout %d", duty, LEDS_CUSTOM_MODE_THRES, g_timeOutTimeMs);	
-		mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, LEDS_TORCH_MODE);
-	}	
-//	upmu_set_flash_dim_duty(duty);
+    if(duty > 7)//flash mode
+    {
+        upmu_set_rg_isink1_double_en(0x1);
+        upmu_set_rg_isink3_double_en(0x1);
+    }
+    else//torch mode
+    {
+        upmu_set_rg_isink1_double_en(0x0);
+        upmu_set_rg_isink3_double_en(0x0);
+    }
+    
     return 0;
 }
 
 int FL_step(kal_uint32 step)
 {
-	int sTab[8]={0,2,4,6,9,11,13,15};
-	PK_DBG("FL_step");
-//	upmu_set_flash_sel(sTab[step]);	
     return 0;
 }
 
 int FL_init(void)
 {
-//	upmu_set_flash_dim_duty(0);
-//	upmu_set_flash_sel(0);
-	PK_DBG("FL_init");
+    printk("%s(): Flash Light init!\n",__func__);
 
-	flashpwm = 0;
-	mt_set_gpio_mode(GPIO_CAMERA_FLASH_EN_PIN, GPIO_CAMERA_FLASH_EN_PIN_M_GPIO);
-	mt_set_gpio_mode(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO);
+    mt_set_gpio_mode(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO);
+    mt_set_gpio_dir(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_DIR_OUT);
+    mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN, GPIO_OUT_ZERO);  
+    mt_set_gpio_mode(GPIO_CAMERA_FLASH_EN_PIN, GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO);
+    mt_set_gpio_dir(GPIO_CAMERA_FLASH_EN_PIN, GPIO_DIR_OUT);
+    mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN, GPIO_OUT_ZERO);  
 
-	FL_disable();
-	INIT_WORK(&workTimeOut, work_timeOutFunc);
+    //  hwPowerDown(MT6323_POWER_LDO_VGP1, "KD_CAMERA_FLASHLIGHT");
+
+    flashlight_isink_set_pmic(0);
+    
+    INIT_WORK(&workTimeOut, work_timeOutFunc); 
     return 0;
 }
 
+
 int FL_uninit(void)
 {
-	PK_DBG("FL_uninit");
-
 	FL_disable();
     return 0;
 }
@@ -224,6 +153,8 @@ int FL_uninit(void)
 /*****************************************************************************
 User interface
 *****************************************************************************/
+
+
 static void work_timeOutFunc(struct work_struct *data)
 {
 	FL_disable();
@@ -246,10 +177,11 @@ void timerInit(void)
 
 }
 
+
+
 static int constant_flashlight_ioctl(MUINT32 cmd, MUINT32 arg)
 {
 	int i4RetValue = 0;
-	int iFlashType = (int)FLASHLIGHT_NONE;
 	int ior;
 	int iow;
 	int iowr;
@@ -261,16 +193,18 @@ static int constant_flashlight_ioctl(MUINT32 cmd, MUINT32 arg)
     switch(cmd)
     {
 
-        case FLASH_IOC_SET_TIME_OUT_TIME_MS:
-                PK_DBG("FLASH_IOC_SET_TIME_OUT_TIME_MS: %d\n",arg);
-                g_timeOutTimeMs=arg;
-                break;
+		case FLASH_IOC_SET_TIME_OUT_TIME_MS:
+			PK_DBG("FLASH_IOC_SET_TIME_OUT_TIME_MS: %d\n",arg);
+			g_timeOutTimeMs=arg;
+		break;
+
 
     	case FLASH_IOC_SET_DUTY :
     		PK_DBG("FLASHLIGHT_DUTY: %d\n",arg);
     		g_duty=arg;
     		FL_dim_duty(arg);
     		break;
+
 
     	case FLASH_IOC_SET_STEP:
     		PK_DBG("FLASH_IOC_SET_STEP: %d\n",arg);
@@ -282,37 +216,32 @@ static int constant_flashlight_ioctl(MUINT32 cmd, MUINT32 arg)
     		PK_DBG("FLASHLIGHT_ONOFF: %d\n",arg);
     		if(arg==1)
     		{
-	            if(g_timeOutTimeMs!=0)
+				if(g_timeOutTimeMs!=0)
 	            {
 	            	ktime_t ktime;
-                        ktime = ktime_set( 0, g_timeOutTimeMs*1000000 );
-                        hrtimer_start( &g_timeOutTimer, ktime, HRTIMER_MODE_REL );
+					ktime = ktime_set( 0, g_timeOutTimeMs*1000000 );
+					hrtimer_start( &g_timeOutTimer, ktime, HRTIMER_MODE_REL );
 	            }
-	            FL_enable();
-	            g_strobe_On=1;
+    			FL_enable();
+    			g_strobe_On=1;
     		}
     		else
     		{
-	            FL_disable();
-	            hrtimer_cancel( &g_timeOutTimer );
-	            g_strobe_On=0;
+    			FL_disable();
+				hrtimer_cancel( &g_timeOutTimer );
+				g_strobe_On=0;
     		}
     		break;
-        case FLASHLIGHTIOC_G_FLASHTYPE:
-            iFlashType = FLASHLIGHT_LED_CONSTANT;
-            if(copy_to_user((void __user *) arg , (void*)&iFlashType , _IOC_SIZE(cmd)))
-            {
-                PK_DBG("[strobe_ioctl] ioctl copy to user failed\n");
-                return -EFAULT;
-            }
-            break;
-        default :
+		default :
     		PK_DBG(" No such command \n");
     		i4RetValue = -EPERM;
     		break;
     }
     return i4RetValue;
 }
+
+
+
 
 static int constant_flashlight_open(void *pArg)
 {
@@ -342,6 +271,7 @@ static int constant_flashlight_open(void *pArg)
 
 }
 
+
 static int constant_flashlight_release(void *pArg)
 {
     PK_DBG(" constant_flashlight_release\n");
@@ -366,12 +296,14 @@ static int constant_flashlight_release(void *pArg)
 
 }
 
+
 FLASHLIGHT_FUNCTION_STRUCT	constantFlashlightFunc=
 {
 	constant_flashlight_open,
 	constant_flashlight_release,
 	constant_flashlight_ioctl
 };
+
 
 MUINT32 constantFlashlightInit(PFLASHLIGHT_FUNCTION_STRUCT *pfFunc)
 {
@@ -382,6 +314,8 @@ MUINT32 constantFlashlightInit(PFLASHLIGHT_FUNCTION_STRUCT *pfFunc)
     return 0;
 }
 
+
+
 /* LED flash control for high current capture mode*/
 ssize_t strobe_VDIrq(void)
 {
@@ -390,3 +324,5 @@ ssize_t strobe_VDIrq(void)
 }
 
 EXPORT_SYMBOL(strobe_VDIrq);
+
+

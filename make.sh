@@ -100,12 +100,14 @@ function MainMenu() {
         if ! [ -a $KERN_IMG ]; then
           echo -e "$red $bold ERROR:$normal $nocol Не удалось собрать ядро!Пожалуйста исправьте ошибки!";
           echo -e "*********************************************************"
-          exit 1
+          exit 25
+          sleep 3
         else
           BUILD_END=$(date +"%T")
 
           echo -e "$yellow $bold DONE:$normal $nocolПоздравляю, файл kernel_${PROJECT_NAME}.bin успешно собран! $BUILD_END - $SHOW_TIME"
           echo -e "*********************************************************"
+          sleep 3
         fi
         MainMenu
       ;;
@@ -399,7 +401,7 @@ function repackBoot() {
   if ! [ -f $KERN_IMG ]; then
     echo -e "$red $bold ERROR:$normal $nocol Не найден файл $KERN_IMG!";
     echo -e "*********************************************************"
-    exit 1
+    exit 25
   fi
 
   MTK_TOOLS_FOLDER=$SCRITP_FOLDER/utils/mtk-tools
@@ -408,7 +410,7 @@ function repackBoot() {
   if ! [ -f $SCRITP_FOLDER/files/boot.img ]; then
     echo -e "$red $bold ERROR:$normal $nocol Не найден файл $SCRITP_FOLDER/files/boot.img!";
     echo -e "*********************************************************"
-    exit 1
+    exit 25
   fi
 
   $MTK_TOOLS_FOLDER/unpack-MTK.pl $SCRITP_FOLDER/files/boot.img
@@ -436,7 +438,7 @@ function repackRecovery() {
   if ! [ -a $KERN_IMG ]; then
     echo -e "$red $bold ERROR:$normal $nocol Не найден файл $KERN_IMG!";
     echo -e "*********************************************************"
-    exit 1
+    exit 25
   fi
 
   MTK_TOOLS_FOLDER=$SCRITP_FOLDER/utils/mtk-tools
@@ -445,7 +447,7 @@ function repackRecovery() {
   if ! [ -a $SCRITP_FOLDER/files/recovery.img ]; then
     echo -e "$red $bold ERROR:$normal $nocol Не найден файл $SCRITP_FOLDER/files/recovery.img!";
     echo -e "*********************************************************"
-    exit 1
+    exit 25
   fi
 
   $MTK_TOOLS_FOLDER/unpack-MTK.pl $SCRITP_FOLDER/files/recovery.img

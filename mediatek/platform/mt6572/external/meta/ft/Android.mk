@@ -59,9 +59,9 @@ LOCAL_C_INCLUDES += $(MTK_PATH_SOURCE)/external/nvram/libfile_op \
                     mediatek/external/dfo/featured \
                     $(TARGET_OUT_HEADERS)/dfo \
                     $(PLATFORM_PATH)/cameratool/CCAP \
-                    $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/inc/acdk \
-                    $(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/inc/acdk \
-                    $(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/acdk/inc/cct \
+                    #$(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/inc/acdk \
+                    #$(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/inc/acdk \
+                    #$(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/acdk/inc/cct \
                     $(TOPDIR)/hardware/libhardware_legacy/include\
                     $(TOPDIR)/hardware/libhardware/include
 
@@ -194,13 +194,13 @@ LOCAL_MODULE := libft
 
 #
 # Start of common part ------------------------------------
-sinclude $(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/mtkcam.mk
+#sinclude $(TOP)/$(MTK_PATH_PLATFORM)/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
-LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
+#LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
+#LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_SOURCE)/hardware/include

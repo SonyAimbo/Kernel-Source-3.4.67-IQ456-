@@ -73,52 +73,38 @@ static void work_timeOutFunc(struct work_struct *data);
 
 int FL_enable(void)
 {
-	//upmu_set_rg_bst_drv_1m_ck_pdn(0);
-	//upmu_set_flash_en(1);
-        //if(mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN,GPIO_OUT_ONE)){PK_DBG("[constant_flashlight] set gpio failed!! \n");}
-        if(mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN,GPIO_OUT_ONE)){PK_DBG("[constant_flashlight] set gpio failed!! \n");}
+	upmu_set_rg_bst_drv_1m_ck_pdn(0);
+	upmu_set_flash_en(1);
     return 0;
 }
 
 int FL_disable(void)
 {
 
-	//upmu_set_flash_en(0);
-        if(mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN,GPIO_OUT_ZERO)){PK_DBG("[constant_flashlight] set gpio failed!! \n");}
+	upmu_set_flash_en(0);
+	//upmu_set_rg_bst_drv_1m_ck_pdn(1);
 
     return 0;
 }
 
 int FL_dim_duty(kal_uint32 duty)
 {
-	//upmu_set_flash_dim_duty(duty);
+	upmu_set_flash_dim_duty(duty);
     return 0;
 }
 
 int FL_step(kal_uint32 step)
 {
 	int sTab[8]={0,2,4,6,9,11,13,15};
-	//upmu_set_flash_sel(sTab[step]);
+	upmu_set_flash_sel(sTab[step]);
     return 0;
 }
 
 int FL_init(void)
 {
-	//upmu_set_flash_dim_duty(0);
-	//upmu_set_flash_sel(0);
-	//FL_disable();
-
-        //set torch mode
-        if(mt_set_gpio_mode(GPIO_CAMERA_FLASH_MODE_PIN,GPIO_CAMERA_FLASH_MODE_PIN_M_GPIO)){PK_DBG("[constant_flashlight] set gpio mode failed!! \n");}
-        if(mt_set_gpio_dir(GPIO_CAMERA_FLASH_MODE_PIN,GPIO_DIR_OUT)){PK_DBG("[constant_flashlight] set gpio dir failed!! \n");}
-        if(mt_set_gpio_out(GPIO_CAMERA_FLASH_MODE_PIN,GPIO_OUT_ZERO)){PK_DBG("[constant_flashlight] set gpio failed!! \n");}
-        //Init. to disable
-        if(mt_set_gpio_mode(GPIO_CAMERA_FLASH_EN_PIN,GPIO_CAMERA_FLASH_EN_PIN_M_GPIO)){PK_DBG("[constant_flashlight] set gpio mode failed!! \n");}
-        if(mt_set_gpio_dir(GPIO_CAMERA_FLASH_EN_PIN,GPIO_DIR_OUT)){PK_DBG("[constant_flashlight] set gpio dir failed!! \n");}
-        if(mt_set_gpio_out(GPIO_CAMERA_FLASH_EN_PIN,GPIO_OUT_ZERO)){PK_DBG("[constant_flashlight] set gpio failed!! \n");}
-
+	upmu_set_flash_dim_duty(0);
+	upmu_set_flash_sel(0);
 	FL_disable();
-
 	INIT_WORK(&workTimeOut, work_timeOutFunc);
     return 0;
 }

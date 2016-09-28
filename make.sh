@@ -91,7 +91,7 @@ function MainMenu() {
         echo -e "*********************************************************"
         sleep 3
 
-        ./mk -o=TARGET_BUILD_VARIANT=user ${PROJECT_NAME} n k
+        ./mk ${PROJECT_NAME} n k
 
         # Проверяем собралось ли ядро, если нет то выводим сообщение об ошибке
         # или об успешной сборке

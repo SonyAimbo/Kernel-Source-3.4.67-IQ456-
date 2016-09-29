@@ -262,10 +262,6 @@ static CAM_PIPE_MGR_STATUS_ENUM CamPipeMgr_LockPipe(CAM_PIPE_MGR_LOCK_STRUCT* pL
     else
     {
         CamPipeMgr_SpinUnlock();
-        if(pLock->Timeout > CAM_PIPE_MGR_TIMEOUT_MAX)
-        {
-            pLock->Timeout = CAM_PIPE_MGR_TIMEOUT_MAX;
-        }
         Timeout = wait_event_interruptible_timeout(
                     CamPipeMgr.WaitQueueHead, 
                     (CamPipeMgr.PipeMask & pLock->PipeMask) == 0,

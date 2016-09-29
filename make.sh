@@ -157,7 +157,7 @@ function LogMenu() {
       LogMenu
     ;;
     2)
-      adb shell cat /proc/last_kmsg > $SCRITP_FOLDER/$LOG_FOLDER/kmsg.log
+      adb shell su -c cat /proc/kmsg > $SCRITP_FOLDER/$LOG_FOLDER/kmsg.log
       sleep 1
       LogMenu
     ;;

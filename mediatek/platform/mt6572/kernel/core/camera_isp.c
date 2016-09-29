@@ -119,12 +119,12 @@ typedef bool                    MBOOL;
 #define ISP_REG_MASK_INT_STATUS         (ISP_INT_VS1 |\
                                         ISP_INT_TG1_INT1 |\
                                         ISP_INT_TG1_INT2 |\
-                                        ISP_INT_EXPDON1 |\
+                                        ISP_INT_EXPDON1 |\                                                                                
                                         ISP_INT_TG1_SOF |\
                                         ISP_INT_PASS1_TG1_DON)
                                         
 #define ISP_REG_MASK_INT_STATUS_ERR 	(ISP_INT_TG1_ERR |\
-                                        ISP_INT_TG1_DROP |\
+                                        ISP_INT_TG1_DROP |\	
 										ISP_INT_TG1_GBERR |\
 										ISP_INT_IMGO_ERR |\
                                         ISP_INT_IMGO_OVERR |\
@@ -263,7 +263,7 @@ static __inline MUINT32 ISP_JiffiesToMs(MUINT32 Jiffies)
 static __inline MUINT32 ISP_GetIRQState(MUINT32 stus)
 {
     MUINT32 ret;
-    unsigned long flags;
+    MUINT32 flags;
     //
     spin_lock_irqsave(&(IspInfo.SpinLockIrq), flags);
     ret = (IspInfo.IrqInfo.Status & stus);
@@ -426,8 +426,8 @@ static void ISP_EnableClock(MBOOL En)
 ********************************************************************************/
 static inline void ISP_Reset(void)
 {    
-    MUINT32 Reg;
-    unsigned long  flags;
+    MUINT32 i, Reg;
+    MUINT32 flags;
 
     LOG_DBG(" +");
     //spin_lock_irq(&(IspInfo.SpinLockHold));
@@ -1173,10 +1173,6 @@ static MINT32 rtbc_deq_dma = ISP_RT_BUF_DMAMAX;
 MUINT32 USE_NEW_RTBC = 1;
 MUINT32 DEQ_SYNC_SOF = 0;
 MUINT32 ENQ_SYNC_SOF = 0;
-MUINT32 SOF_PASS1DONE_PAIRED = 0;
-
-MINT32 DevId = 1;
-#if 0
 static void ISP_RTBC_PRINTBUF()
 {
 	MUINT32 i = 0;
@@ -1193,7 +1189,6 @@ static void ISP_RTBC_PRINTBUF()
 	}
 	LOG_WRN("[rtbc][print]***");
 }
-#endif
 static MINT32 ISP_RTBC_ENQUE(MINT32 dma)
 {
     MINT32 Ret = 0;
@@ -1362,7 +1357,7 @@ if(!USE_NEW_RTBC)
 static MINT32 ISP_RTBC_DEQUE(MINT32 dma)
 {
     MINT32 Ret = 0;
-    //MINT32 rt_dma = dma;
+    MINT32 rt_dma = dma;
     MUINT32 i=0;
     MUINT32 index = 0;
 
@@ -1498,14 +1493,14 @@ static long ISP_Buf_CTRL_FUNC(MUINT32 Param)
     MINT32 rt_dma;
     MUINT32 reg_val = 0;
     MUINT32 i = 0;
-    //MUINT32 iBuf = 0;
+    MUINT32 iBuf = 0;
     MUINT32 size = 0;
     MUINT32 bWaitBufRdy = 0;
     ISP_RT_BUF_CTRL_STRUCT rt_buf_ctrl;
     //MUINT32 buffer_exist = 0;
 
     MINT32 Timeout = 5000; //ms
-    //MUINT32 tstamp = 0;
+    MUINT32 tstamp = 0;
     
     //
     if (NULL == pstRTBuf)  
@@ -1709,7 +1704,6 @@ static long ISP_Buf_CTRL_FUNC(MUINT32 Param)
 				gSofPreUsec = gPass1PreUsec = 0;
 				frmCnt = deqCnt = enqCnt = dropCnt = 0;		
 				gIrqLogCnt = 0;
-                SOF_PASS1DONE_PAIRED = 0;
 				memset((char*)(&gCameraIspIrqLog),0x00,sizeof(CAMERA_ISP_IRQ_LOG_STRUCT));				
                 memset((char*)pstRTBuf,0x00,sizeof(ISP_RT_BUF_INFO_STRUCT));
                 //prv_tstamp = 0;
@@ -1741,9 +1735,7 @@ static MINT32 ISP_SOF_Buf_Get(unsigned long long sec,unsigned long usec)
 	unsigned int pAddr = 0;
 	unsigned int dma_base_addr = 0;
 	unsigned int next = 0;
-	//unsigned int reg_val = 0;
-    unsigned int error = 0;
-    unsigned int tempvalue = 0;
+	unsigned int reg_val = 0;
     //
     //spin_lock_irqsave(&(IspInfo.SpinLockRTBC),g_Flash_SpinLock);
     //
@@ -1837,25 +1829,6 @@ if(!USE_NEW_RTBC)
     }
 }
 
-	// fixed timing issue in post-MP; update next buffer to ISP when VF open
-	if( ISP_RD32(ISP_REG_TG_VF_CON) & 0x00000001 )
-	{
-        if (1 == SOF_PASS1DONE_PAIRED)
-        {
-            //Error handling, if the sensor send the frame start, but no any frame done.
-           error = 1;
-           tempvalue = *((unsigned int*)(0xF4014018));
-           LOG_ERR("isp ovrun");
-        }
-        SOF_PASS1DONE_PAIRED = 1;
-        if (0x04 == DevId) //0x01 main sensor, 0x02 sub sensor, 0x04 atv sensor
-        {
-		   dma_base_addr = ISP_REG_IMGO_BASE_ADDR;
-    	   pAddr = pstRTBuf->ring_buf.data[(pstRTBuf->ring_buf.start+1)%pstRTBuf->ring_buf.total_count].base_pAddr;
-		   ISP_WR32(dma_base_addr, pAddr);
-		}
-    }
-
     //if(IspInfo.DebugMask & ISP_DBG_RT_BUF_CTRL) 
 	//{
 		//ISP_RTBC_PRINTBUF();
@@ -1909,7 +1882,6 @@ static MINT32 ISP_DONE_Buf_Time(unsigned long long sec,unsigned long usec)
 if(USE_NEW_RTBC)
 {
 	//set curr buf as filled
-	SOF_PASS1DONE_PAIRED = 0;
 	curr = pstRTBuf->ring_buf.start;
 	if(0x0 == pstRTBuf->ring_buf.data[curr].base_pAddr)
 	{
@@ -1975,14 +1947,10 @@ if(USE_NEW_RTBC)
 		if(pstRTBuf->ring_buf.data[curr].bFilled == ISP_RT_BUF_LOCKED)
         {      
             next = (curr + pstRTBuf->ring_buf.total_count - 1)%pstRTBuf->ring_buf.total_count;
-			pstRTBuf->ring_buf.data[next].bFilled = ISP_RT_BUF_EMPTY;
-			pstRTBuf->ring_buf.empty_count++;
         }
         else if(pstRTBuf->ring_buf.data[curr].bFilled == ISP_RT_BUF_FILLED)
         {
             next = curr;
-			pstRTBuf->ring_buf.data[next].bFilled = ISP_RT_BUF_EMPTY;			
-			pstRTBuf->ring_buf.empty_count++;
         }
 
         pAddr = pstRTBuf->ring_buf.data[next].base_pAddr;
@@ -2105,8 +2073,8 @@ else
 static MINT32 ISP_WaitIrq(ISP_WAIT_IRQ_STRUCT WaitIrq)
 {
     MINT32 Ret = 0, Timeout = WaitIrq.Timeout;
-    //MUINT32 i;
-    unsigned long flags;
+    MUINT32 i;
+    MUINT32 flags;
     //
     if(IspInfo.DebugMask & ISP_DBG_INT)
     {
@@ -2174,7 +2142,7 @@ static __tcmfunc irqreturn_t ISP_Irq(
     MINT32  Irq,
     void*   DeviceId)
 {
-    //MUINT32 i;
+    MUINT32 i;
     MUINT32 IrqStatus;
     // Read irq status
     IrqStatus = (ISP_RD32(ISP_REG_INT_STATUS)&(IspInfo.IrqInfo.Mask|IspInfo.IrqInfo.ErrMask));
@@ -2293,16 +2261,14 @@ static long ISP_ioctl(
     MINT32 Ret = 0;
     //
     MBOOL   HoldEnable = MFALSE;
-    MUINT32 DebugFlag = 0;
+    MUINT32 DebugFlag = 0,pid = 0;
     ISP_REG_IO_STRUCT       RegIo;
     ISP_HOLD_TIME_ENUM      HoldTime;
     ISP_WAIT_IRQ_STRUCT     WaitIrq;
     MUINT32     			ReadIrqStatus;
     MUINT32    				ClearIrqStatus;
-    MINT32                 DevIdTmp;
-    
     ISP_USER_INFO_STRUCT*   pUserInfo;
-    unsigned long flags;
+    MUINT32 flags;
     //
     if(pFile->private_data == NULL)
     {
@@ -2424,20 +2390,6 @@ static long ISP_ioctl(
                 LOG_DBG("ISP_CLEAR_IRQ:Status(0x%08X),IrqStatus(0x%08X)",ClearIrqStatus,IspInfo.IrqInfo.Status);
                 IspInfo.IrqInfo.Status &= (~ClearIrqStatus);
                 spin_unlock_irqrestore(&(IspInfo.SpinLockIrq), flags);
-            }
-            else
-            {
-                LOG_ERR("copy_from_user failed");
-                Ret = -EFAULT;
-            }
-            break;
-        }
-        case ISP_IOC_SET_DEVICE_ID:
-        {
-            if(copy_from_user(&DevIdTmp, (void*)Param, sizeof(MINT32)) == 0)
-            {
-                DevId = DevIdTmp;
-                LOG_ERR("camera device id: %d",DevId);
             }
             else
             {
@@ -2994,8 +2946,6 @@ static MINT32 ISP_suspend(
     struct platform_device* pDev,
     pm_message_t            Mesg)
 {
-    ISP_WAIT_IRQ_STRUCT waitirq;
-    MINT32 ret = 0;
     // VFDATA_EN. TG1 Take Picture Request.
     MUINT32 regTG1Val = ISP_RD32(ISP_REG_TG_VF_CON);
     LOG_DBG("bPass1_On_In_Resume_TG1(%d), regTG1Val(0x%08x)", bPass1_On_In_Resume_TG1, regTG1Val);
@@ -3005,13 +2955,6 @@ static MINT32 ISP_suspend(
     {
         bPass1_On_In_Resume_TG1 = MTRUE;
 		ISP_WR32(ISP_REG_TG_VF_CON, (regTG1Val&(~0x01)));
-		
-        //wait p1 done
-        waitirq.Clear=ISP_IRQ_CLEAR_WAIT;
-        waitirq.Status=ISP_INT_PASS1_TG1_DON;
-        waitirq.Timeout=100;
-        ret=ISP_WaitIrq(waitirq);
-		
     }
    
     return 0;
@@ -3058,6 +3001,9 @@ extern void mt_irq_set_polarity(unsigned int irq, unsigned int polarity);
 int ISP_pm_restore_noirq(struct device *device)
 {
     pr_debug("calling %s()\n", __func__);
+
+	// reset clkmux to default 48M when IPO-H reboot
+	clkmux_sel(MT_CLKMUX_CAM_MUX_SEL, MT_CG_UNIV_48M, "CAMERA");
 
     mt_irq_set_sens(MT_CAMERA_IRQ_ID, MT65xx_LEVEL_SENSITIVE);
     mt_irq_set_polarity(MT_CAMERA_IRQ_ID, MT65xx_POLARITY_LOW);
@@ -3118,47 +3064,47 @@ static MINT32 ISP_DumpRegToProc(
     p += sprintf(p, "====== cam ======\n");
     for(i = 0x0; i <= 0x084; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, (unsigned int)ISP_RD32(ISP_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, ISP_RD32(ISP_BASE_ADDR + i));
     }
     p += sprintf(p,"====== dma ======\n");
     for(i = 0x200; i <= 0x22C; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, (unsigned int)ISP_RD32(ISP_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, ISP_RD32(ISP_BASE_ADDR + i));
     }
     p += sprintf(p,"====== tg ======\n");
     for(i = 0x410; i <= 0x44C; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, (unsigned int)ISP_RD32(ISP_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, ISP_RD32(ISP_BASE_ADDR + i));
     }
     p += sprintf(p,"====== cdrz ======\n");
     for(i = 0xB00; i <= 0xB38; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, (unsigned int)ISP_RD32(ISP_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", ISP_BASE_ADDR + i, ISP_RD32(ISP_BASE_ADDR + i));
     }
     p += sprintf(p,"====== seninf ======\n");
     for(i = 0x0; i <= 0x40; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }
     for(i = 0x100; i <= 0x13C; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }
     for(i = 0x200; i <= 0x240; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }
     for(i = 0x300; i <= 0x310; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }
     for(i = 0x400; i <= 0x424; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }
     for(i = 0x600; i <= 0x644; i += 4)
     {
-        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, (unsigned int)ISP_RD32(SENINF_BASE_ADDR + i));
+        p += sprintf(p,"+0x%08x 0x%08x\n", SENINF_BASE_ADDR + i, ISP_RD32(SENINF_BASE_ADDR + i));
     }     
     //
     *ppStart = pPage + off;
@@ -3301,7 +3247,7 @@ static MINT32  CAMIO_RegDebug(
 *
 ********************************************************************************/
 static ISP_RT_BUF_STRUCT rt_buf1, rt_buf2, rt_buf3;
-static ISP_RT_BUF_STRUCT rt_buf_d1, rt_buf_d2;
+static ISP_RT_BUF_STRUCT rt_buf_d1, rt_buf_d2, rt_buf_d3;
 char* q_printf(char *p)
 {
 	int i;
@@ -3327,6 +3273,7 @@ static MINT32 ISP_RTBCTestToProc(
     char *p = pPage;
     MINT32 Length = 0;
     MINT32 ret = 0;
+	MUINT32 i = 0;
     //
     LOG_DBG("- E. pPage: 0x%08x. off: %d. Count: %d.", (unsigned int)pPage, (int)off, Count);
     //
@@ -3453,9 +3400,6 @@ char* fpga_write_reg(char* p, char* regname, unsigned int offset, unsigned int v
 	
 	return p;
 }
-
-//Mark by hungwen, because of build warning!!
-#if 0
 void fpga_reset_cam_tg()
 {
 	char *p;
@@ -3487,7 +3431,6 @@ void fpga_reset_cam_tg()
     fpga_write_reg(p, "~SENINF_TG1_TM_CTL",     0x1308, 0x00300004);
     fpga_write_reg(p, "~SENINF_TG1_TM_SIZE",    0x130C, 0x00000000);
 }
-#endif
 
 //#include <asm/io.h>
 static MINT32 ISP_Pass1TestToProc(
@@ -3505,7 +3448,7 @@ static MINT32 ISP_Pass1TestToProc(
 
     unsigned long* imgoAddr;
     MUINT32 imgiLog, imgiPhy, imgiSize;
-    //MINT32   imgiMemId;
+    MINT32   imgiMemId;
     int flag, InW, InH, OutW, OutH;
     int testW, testH;
     int grabW, grabH, grabX, grabY;
@@ -3515,7 +3458,7 @@ static MINT32 ISP_Pass1TestToProc(
     int testdummy, testpattern; // for sen tg test
     int ckimgW, ckimgH;         // for sen tg check    
 
-	//int mispfd, msensorfd;
+	int mispfd, msensorfd;
 	
     //
     LOG_DBG("- E. pPage: 0x%08x. off: %d. Count: %d.", (unsigned int)pPage, (int)off, Count);
@@ -3572,11 +3515,10 @@ static MINT32 ISP_Pass1TestToProc(
 												testW/2, testH, grabW/2, grabH, cdrzOutW, cdrzOutH);
     p += sprintf(p,"cdrz coefW=0x%08X, coefH=0x%08X \n", coefW, coefH);
 	p += sprintf(p,"pmem allocation: size=0x%X, imgiLog= 0x%08X , imgiPhy= 0x%08X \n", imgiSize, imgiLog, imgiPhy);
-	p += sprintf(p,"imgoAddr = 0x%08X \n", (MUINT32)imgoAddr);
+	p += sprintf(p,"imgoAddr = 0x%08X \n", imgoAddr);
 
 	// start config isp/seninf
-    //Mark by hung-wen
-    //fpga_reset_cam_tg();
+	fpga_reset_cam_tg();
 
 //
 	p = fpga_write_reg(p, "SENINF1_CTRL",          0x1010, 0x86DF3180);    // enable seninf mux and
@@ -3651,7 +3593,6 @@ static MINT32 ISP_Pass1TestToProc(
 /*******************************************************************************
 *
 ********************************************************************************/
-#if 0
 static MINT32 ISP_TestToProc(
     char*   pPage,
     char**  ppStart,
@@ -3692,7 +3633,6 @@ static MINT32 ISP_TestToProc(
 
 	return ret;
 }
-#endif
 #endif //__ISP_PROC_TEST_ENABLE__
 /*******************************************************************************
 *

@@ -1,10 +1,10 @@
-/*#ifdef OV5645_MIPI_YUV_CHENXING
+#ifdef OV5645_MIPI_YUV_CHENXING
     #define OV5645_MIPI_YUV
 #endif
 #ifdef  SP0A28_YUV
     #define SP0A28_MIPI_YUV
 #endif
-*/
+
 
 //s_add new sensor driver here
 //export funtions

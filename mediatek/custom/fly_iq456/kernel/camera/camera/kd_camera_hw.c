@@ -39,9 +39,11 @@
 
 
 static void MainCameraDigtalPowerCtrl(kal_bool on){
-	    //if(mt_set_gpio_mode(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,0)){PK_DBG("[[CAMERA SENSOR] Set MAIN CAMERA_DIGITAL POWER_PIN ! \n");}
-	    //if(mt_set_gpio_dir(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,GPIO_DIR_OUT)){PK_DBG("[[CAMERA SENSOR] Set CAMERA_POWER_PULL_PIN DISABLE ! \n");}
-	    //if(mt_set_gpio_out(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,on)){PK_DBG("[[CAMERA SENSOR] Set CAMERA_POWER_PULL_PIN DISABLE ! \n");;}
+/*	
+    if(mt_set_gpio_mode(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,0)){PK_DBG("[[CAMERA SENSOR] Set MAIN CAMERA_DIGITAL POWER_PIN ! \n");}
+    if(mt_set_gpio_dir(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,GPIO_DIR_OUT)){PK_DBG("[[CAMERA SENSOR] Set CAMERA_POWER_PULL_PIN DISABLE ! \n");}
+    if(mt_set_gpio_out(GPIO_MAIN_CAMERA_12V_POWER_CTRL_PIN,on)){PK_DBG("[[CAMERA SENSOR] Set CAMERA_POWER_PULL_PIN DISABLE ! \n");;}
+*/    
 }
 
 
@@ -55,8 +57,14 @@ static void MainCameraAnalogPowerCtrl(kal_bool on){
     if(mt_set_gpio_out(GPIO_MAIN_CAMERA_28V_POWER_CTRL_PIN,on)){PK_DBG("[[CAMERA SENSOR] Set CAMERA_POWER_PULL_PIN DISABLE ! \n");;}
 }*/
 
-
-static u32 mainCamAFPowerFlag = 0;
+void afPowerOn(void)
+{	
+    if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A2, VOL_2800,"kd_camera_hw"))
+    {
+        PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+        //return -EIO;
+    }
+}
 
 int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSensorName, BOOL On, char* mode_name)
 {
@@ -69,28 +77,30 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
     #define IDX_PS_MODE 1
     #define IDX_PS_ON   2
     #define IDX_PS_OFF  3
+
     u32 pinSet[2][8] = {
           //for main sensor
           {GPIO_CAMERA_CMRST_PIN,
-           GPIO_CAMERA_CMRST_PIN_M_GPIO,   /* mode */
-           GPIO_OUT_ONE,                   /* ON state */
-           GPIO_OUT_ZERO,                  /* OFF state */
+              GPIO_CAMERA_CMRST_PIN_M_GPIO,   /* mode */
+              GPIO_OUT_ONE,                   /* ON state */
+              GPIO_OUT_ZERO,                  /* OFF state */
            GPIO_CAMERA_CMPDN_PIN,
-           GPIO_CAMERA_CMPDN_PIN_M_GPIO,
-           GPIO_OUT_ZERO,
-           GPIO_OUT_ONE,
+              GPIO_CAMERA_CMPDN_PIN_M_GPIO,
+              GPIO_OUT_ONE,
+              GPIO_OUT_ZERO, 
           },
           //for sub sensor
           {GPIO_CAMERA_CMRST1_PIN,
            GPIO_CAMERA_CMRST1_PIN_M_GPIO,
-           GPIO_OUT_ONE,
-           GPIO_OUT_ZERO,
+              GPIO_OUT_ZERO,
+              GPIO_OUT_ONE,
            GPIO_CAMERA_CMPDN1_PIN,
-           GPIO_CAMERA_CMPDN1_PIN_M_GPIO,
-           GPIO_OUT_ZERO,
-           GPIO_OUT_ONE, 
+              GPIO_CAMERA_CMPDN1_PIN_M_GPIO,
+              GPIO_OUT_ZERO,
+              GPIO_OUT_ONE, 
           }
          };
+
 
     PK_DBG("kdCISModulePowerOn: 4EC 8AA\n");
 
@@ -107,20 +117,205 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
 
        PK_DBG("kdCISModulePowerOn -on:currSensorName=%s;\n",currSensorName);
 
-       //MainCameraDigtalPowerCtrl(1);
-       
-       if (currSensorName && ((0 == strcmp(SENSOR_DRVNAME_HI253_YUV,currSensorName))||(0 == strcmp(SENSOR_DRVNAME_HI257_YUV,currSensorName))))
+	//   MainCameraDigtalPowerCtrl(1);
+       if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_SP0A28_MIPI_YUV,currSensorName)))
        {
-              PK_DBG("[CAMERA SENSOR] kdCISModulePowerOn get in---HI253_YUV or HI257_YUV sensorIdx:%d; pinSetIdx=%d\n",SensorIdx, pinSetIdx);
-              if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST])
-              {
-                     if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
-                     if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
-                     if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
-                     if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
-                     if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
-                     if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
-              }
+            PK_DBG("[CAMERA SENSOR]SP0A28_MIPI_YUV sensorIdx:%d \n",SensorIdx);
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D2, VOL_1800,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }                    
+
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A, VOL_2800,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
+
+
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1500,mode_name))
+            {
+                 PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+                 //return -EIO;
+                 goto _kdCISModulePowerOn_exit_;
+            }
+            
+            //if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A2, VOL_2800,mode_name))
+            //{
+            //    PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+            //    goto _kdCISModulePowerOn_exit_;
+            //}        
+
+            //disable inactive sensor
+            if (GPIO_CAMERA_INVALID != pinSet[1-pinSetIdx][IDX_PS_CMRST]) {
+                if(mt_set_gpio_mode(pinSet[1-pinSetIdx][IDX_PS_CMRST],pinSet[1-pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+                if(mt_set_gpio_mode(pinSet[1-pinSetIdx][IDX_PS_CMPDN],pinSet[1-pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[1-pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[1-pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[1-pinSetIdx][IDX_PS_CMRST],pinSet[1-pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
+                if(mt_set_gpio_out(pinSet[1-pinSetIdx][IDX_PS_CMPDN],pinSet[1-pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+            }        
+
+            //enable active sensor
+            //RST pin
+            if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST]) {
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+                msleep(10);
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_ON])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+                msleep(10);
+
+                //PDN pin
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_ON])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
+            }   
+	   }
+	    if(currSensorName && (0 == strcmp( SENSOR_DRVNAME_S5K5EAYX_YUV ,currSensorName)))
+	   {
+          PK_DBG("kdCISModulePowerOn get in---  SENSOR_DRVNAME_S5K5EAYX_YUV \n");
+          PK_DBG("sensorIdx:%d \n",SensorIdx);
+
+		  if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+		  if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+		  if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
+
+		  if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+		  if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+		  if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+
+
+	   
+          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D2, VOL_1800,mode_name))
+          {
+             printk("[CAMERA SENSOR] Fail to enable digital power\n");
+             //return -EIO;
+             goto _kdCISModulePowerOn_exit_;
+          }
+
+          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1800,mode_name))
+          {
+             printk("[CAMERA SENSOR] Fail to enable digital power\n");
+             //return -EIO;
+             goto _kdCISModulePowerOn_exit_;
+          }
+       
+          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A, VOL_2800,mode_name))
+          {
+             printk("[CAMERA SENSOR] Fail to enable analog power\n");
+             //return -EIO;
+             goto _kdCISModulePowerOn_exit_;
+          }
+       
+          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A2, VOL_2800,mode_name))
+          {
+             printk("[CAMERA SENSOR] Fail to enable analog power\n");
+             //return -EIO;
+             goto _kdCISModulePowerOn_exit_;
+          }
+
+		  //mt_set_gpio_mode(GPIO_CAMERA_AF_EN_PIN, GPIO_CAMERA_AF_EN_PIN_M_GPIO);
+    	  //mt_set_gpio_dir(GPIO_CAMERA_AF_EN_PIN, GPIO_DIR_OUT);
+    	  //mt_set_gpio_out(GPIO_CAMERA_AF_EN_PIN, GPIO_OUT_ONE);    /*push device to shutdown mode*/
+       
+          //PDN/STBY pin
+          //if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST])
+          {
+
+			 PK_DBG("kdCISModulePowerOn get in---  SENSOR_DRVNAME_S5K5EAYX_YUV -Do pwd\n");
+             if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_ON])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
+             mdelay(5);
+       
+			 PK_DBG("kdCISModulePowerOn get in---  SENSOR_DRVNAME_S5K5EAYX_YUV -Do pwd\n");
+             if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_ON])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+             mdelay(5);
+          }
+          mdelay(100);   
+	   /*
+          //disable inactive sensor
+          if(pinSetIdx == 0) {//disable sub
+             pinSetIdxTmp = 1;
+          }
+          else{
+             pinSetIdxTmp = 0;
+          }
+          if (GPIO_CAMERA_INVALID != pinSet[pinSetIdxTmp][IDX_PS_CMRST]) {
+             if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+             if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+             if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+             if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+             if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
+             if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+          }
+		  */
+       }
+       else if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_OV5645_MIPI_YUV,currSensorName)))
+       {
+            PK_DBG("[CAMERA SENSOR]OV5645_MIPI_YUV sensorIdx:%d \n",SensorIdx);
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D2, VOL_1800,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }                    
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A, VOL_2800,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
+
+
+            if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1500,mode_name))
+            {
+                 PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+                 //return -EIO;
+                 goto _kdCISModulePowerOn_exit_;
+            }
+
+            //if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A2, VOL_2800,mode_name))
+            //{
+            //    PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+            //    goto _kdCISModulePowerOn_exit_;
+            //}        
+
+            //disable inactive sensor
+            if (GPIO_CAMERA_INVALID != pinSet[1-pinSetIdx][IDX_PS_CMRST]) {
+                if(mt_set_gpio_mode(pinSet[1-pinSetIdx][IDX_PS_CMRST],pinSet[1-pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+                if(mt_set_gpio_mode(pinSet[1-pinSetIdx][IDX_PS_CMPDN],pinSet[1-pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[1-pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[1-pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[1-pinSetIdx][IDX_PS_CMRST],pinSet[1-pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
+                if(mt_set_gpio_out(pinSet[1-pinSetIdx][IDX_PS_CMPDN],pinSet[1-pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+            }        
+
+            //enable active sensor
+            //RST pin
+            if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST]) {
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+                msleep(10);
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_ON])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
+                msleep(1);
+
+                //PDN pin
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_ON])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
+            }
+            //PK_DBG("OV5645MIPI READ ID: RST gpio = %d\n",mt_get_gpio_out(GPIO_CAMERA_CMRST_PIN));
+            //PK_DBG("OV5645MIPI READ ID: PDN gpio = %d\n",mt_get_gpio_out(GPIO_CAMERA_CMPDN_PIN));
+       }
+       else if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_BF3905_MIPI_YUV,currSensorName)))
+       {
+		   PK_DBG("[CAMERA SENSOR] kdCISModulePowerOn get in---BF3905_MIPI_YUV sensorIdx:%d; pinSetIdx=%d\n",SensorIdx, pinSetIdx);
 	   
 		   if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D2, VOL_1800,mode_name))
 		   {
@@ -136,13 +331,22 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
 			   goto _kdCISModulePowerOn_exit_;
 		   }
 	   
-              if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1500,mode_name))
-              {
-                     PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
-                     //return -EIO;
-                     goto _kdCISModulePowerOn_exit_;
-              }
-              msleep(5);
+		   if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1200,mode_name))
+		   {
+			   PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+			   //return -EIO;
+			   goto _kdCISModulePowerOn_exit_;
+		   }
+	   
+	   	   
+		   //if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_A2, VOL_2800,mode_name))
+		   //{
+		   //    PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+			   //return -EIO;
+		   //    goto _kdCISModulePowerOn_exit_;
+		   //}
+		   
+		   msleep(5);
 
 		   if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");}
 		   if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");}
@@ -161,27 +365,25 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
 			 msleep(3);
 		   }   
 		   
-              //disable inactive sensor
-              if(pinSetIdx == 0) {//disable sub
-                     pinSetIdxTmp = 1;
-              }
-              else{
-                     pinSetIdxTmp = 0;
-              }
-              if (GPIO_CAMERA_INVALID != pinSet[pinSetIdxTmp][IDX_PS_CMRST])
-              {
-                 if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
-                 if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
-                 if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
-                 if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
-                 if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
-                 if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
-              }
-       }
-       else if ((currSensorName && (0 == strcmp(SENSOR_DRVNAME_HI704_YUV,currSensorName)))
-			||(currSensorName && (0 == strcmp(SENSOR_DRVNAME_SP0A19_YUV,currSensorName))))
+		   //disable inactive sensor
+		   if(pinSetIdx == 0) {//disable sub
+			   pinSetIdxTmp = 1;
+		   }
+		   else{
+			   pinSetIdxTmp = 0;
+		   }
+		   if (GPIO_CAMERA_INVALID != pinSet[pinSetIdxTmp][IDX_PS_CMRST]) {
+			   if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+			   if(mt_set_gpio_mode(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+			   if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+			   if(mt_set_gpio_dir(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+			   if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMRST],pinSet[pinSetIdxTmp][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
+			   if(mt_set_gpio_out(pinSet[pinSetIdxTmp][IDX_PS_CMPDN],pinSet[pinSetIdxTmp][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+		   }
+	   }
+       else if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_S5K8AAYX_YUV,currSensorName)))
        {  
-          PK_DBG("[CAMERA SENSOR] kdCISModulePowerOn get in---HI704_YUV sensorIdx:%d; pinSetIdx=%d\n",SensorIdx, pinSetIdx);
+		   PK_DBG("[CAMERA SENSOR] kdCISModulePowerOn get in---S5K8AAYX_YUV sensorIdx:%d; pinSetIdx=%d\n",SensorIdx, pinSetIdx);
        
           if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D2, VOL_1800/*VOL_2800*/,mode_name))
           {
@@ -197,7 +399,7 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
              goto _kdCISModulePowerOn_exit_;
           }
        
-          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1500,mode_name)) //VOL_1200
+          if(TRUE != hwPowerOn(CAMERA_POWER_VCAM_D, VOL_1200,mode_name))
           {
              PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
              //return -EIO;
@@ -250,38 +452,83 @@ int kdCISModulePowerOn(CAMERA_DUAL_CAMERA_SENSOR_ENUM SensorIdx, char *currSenso
     else {//power OFF
 
        PK_DBG("kdCISModulePowerOn -off:currSensorName=%s\n",currSensorName);
-       if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST]) {
-           if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
-           if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
-           if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
-       
-           if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
-           if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
-           if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
-       }
+       if(currSensorName && (0 == strcmp(SENSOR_DRVNAME_OV5645_MIPI_YUV,currSensorName)))
+	   {
+	        //PK_DBG("[OFF]sensorIdx:%d \n",SensorIdx);
+	        if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST]) {
+	            if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+	            if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+	            if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+	            if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+	            if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
+	    	    if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+	        }       
 
-       //if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_S5K4ECGX_MIPI_YUV,currSensorName)))
+	    	if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_A,mode_name)) {
+	            PK_DBG("[CAMERA SENSOR] Fail to OFF analog power\n");
+	            //return -EIO;
+	            goto _kdCISModulePowerOn_exit_;
+	        }
+	        if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D, mode_name)) {
+	            PK_DBG("[CAMERA SENSOR] Fail to OFF digital power\n");
+	            //return -EIO;
+	            goto _kdCISModulePowerOn_exit_;
+	        }
+	        if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D2,mode_name))
+	        {
+	            PK_DBG("[CAMERA SENSOR] Fail to enable digital power\n");
+	            //return -EIO;
+	            goto _kdCISModulePowerOn_exit_;
+	        } 
+	        if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_A2,mode_name))
+	        {
+	            PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+	            //return -EIO;
+	            goto _kdCISModulePowerOn_exit_;
+	        }     	
+	   }
+       else
        {
-          //MainCameraDigtalPowerCtrl(0);
-       }
+            if (GPIO_CAMERA_INVALID != pinSet[pinSetIdx][IDX_PS_CMRST]) {
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_MODE])){PK_DBG("[CAMERA SENSOR] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMRST],GPIO_DIR_OUT)){PK_DBG("[CAMERA SENSOR] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMRST],pinSet[pinSetIdx][IDX_PS_CMRST+IDX_PS_OFF])){PK_DBG("[CAMERA SENSOR] set gpio failed!! \n");} //low == reset sensor
 
-       if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D, mode_name)) {
-           PK_DBG("[CAMERA SENSOR] Fail to OFF digital power\n");
-           //return -EIO;
-           goto _kdCISModulePowerOn_exit_;
-       }
-       
-       if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_A,mode_name)) {
-           PK_DBG("[CAMERA SENSOR] Fail to OFF analog power\n");
-           //return -EIO;
-           goto _kdCISModulePowerOn_exit_;
-       }
-       
-       if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D2,mode_name))
-       {
-           PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
-           //return -EIO;
-           goto _kdCISModulePowerOn_exit_;
+                if(mt_set_gpio_mode(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_MODE])){PK_DBG("[CAMERA LENS] set gpio mode failed!! \n");}
+                if(mt_set_gpio_dir(pinSet[pinSetIdx][IDX_PS_CMPDN],GPIO_DIR_OUT)){PK_DBG("[CAMERA LENS] set gpio dir failed!! \n");}
+                if(mt_set_gpio_out(pinSet[pinSetIdx][IDX_PS_CMPDN],pinSet[pinSetIdx][IDX_PS_CMPDN+IDX_PS_OFF])){PK_DBG("[CAMERA LENS] set gpio failed!! \n");} //high == power down lens module
+            }
+
+            //if (currSensorName && (0 == strcmp(SENSOR_DRVNAME_S5K4ECGX_MIPI_YUV,currSensorName)))
+            {
+                MainCameraDigtalPowerCtrl(0);
+            }
+
+            if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D, mode_name)) {
+                PK_DBG("[CAMERA SENSOR] Fail to OFF digital power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
+
+            if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_A,mode_name)) {
+                PK_DBG("[CAMERA SENSOR] Fail to OFF analog power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
+
+            if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_D2,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
+
+            if(TRUE != hwPowerDown(CAMERA_POWER_VCAM_A2,mode_name))
+            {
+                PK_DBG("[CAMERA SENSOR] Fail to enable analog power\n");
+                //return -EIO;
+                goto _kdCISModulePowerOn_exit_;
+            }
        }
   }
 
@@ -290,4 +537,8 @@ _kdCISModulePowerOn_exit_:
     return -EIO;
 }
 
+
 EXPORT_SYMBOL(kdCISModulePowerOn);
+
+//!--
+//

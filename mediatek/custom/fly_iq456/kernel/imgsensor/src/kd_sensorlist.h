@@ -1,9 +1,10 @@
-#ifdef OV5645_MIPI_YUV_CHENXING
+/*#ifdef OV5645_MIPI_YUV_CHENXING
     #define OV5645_MIPI_YUV
 #endif
 #ifdef  SP0A28_YUV
     #define SP0A28_MIPI_YUV
 #endif
+*/
 
 //s_add new sensor driver here
 //export funtions
@@ -82,6 +83,9 @@ UINT32 GC0330_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 OV2680MIPISensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 S5K4H5YX_2LANE_MIPI_RAW_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
 UINT32 SP0A28_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
+UINT32 BF3905_MIPI_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
+UINT32 S5K5EAYX_YUV_SensorInit(PSENSOR_FUNCTION_STRUCT *pfFunc);
+
 
 //! Add Sensor Init function here
 //! Note:
@@ -313,6 +317,12 @@ ACDK_KD_SENSOR_INIT_FUNCTION_STRUCT kdSensorList[MAX_NUM_OF_SUPPORT_SENSOR+1] =
 #endif
 #if defined(SP0A28_MIPI_YUV) 
     {SP0A28_SENSOR_ID, SENSOR_DRVNAME_SP0A28_MIPI_YUV, SP0A28_YUV_SensorInit},
+#endif
+#if defined(BF3905_MIPI_YUV)
+    {BF3905_MIPI_SENSOR_ID, SENSOR_DRVNAME_BF3905_MIPI_YUV, BF3905_MIPI_YUV_SensorInit}, 
+#endif
+#if defined(S5K5EAYX_YUV)
+    {S5K5EAYX_YUV_SENSOR_ID, SENSOR_DRVNAME_S5K5EAYX_YUV, S5K5EAYX_YUV_SensorInit}, 
 #endif
 
 /*  ADD sensor driver before this line */

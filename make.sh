@@ -165,7 +165,7 @@ function LogMenu() {
       GPIOLog
     ;;
     4)
-      LogMenu
+      adb shell logcat *:E > $SCRITP_FOLDER/$LOG_FOLDER/logcat.log
     ;;
     *)
       echo -e "$red $bold ERROR:$normal $nocol нет такой команды" && sleep 2

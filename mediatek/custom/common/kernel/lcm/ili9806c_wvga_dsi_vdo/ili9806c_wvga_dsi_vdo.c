@@ -414,26 +414,33 @@ static struct LCM_setting_table lcm_ese_pre_setting[] = {
 };
 
 static struct LCM_setting_table lcm_sleep_out_setting[] = {
+    {0xFF, 5, {0xFF,0x98,0x06,0x04,0x00}},
     // Sleep Out
-    {0xFF,5,{0xFF,0x98,0x06,0x04,0x00}},
-	{0x11, 0, {0x00}},
-       {REGFLAG_DELAY, 125, {}},
-    // Display ON
-	{0x29, 0, {0x00}},
-	{REGFLAG_DELAY, 20, {}},
-	{REGFLAG_END_OF_TABLE, 0x00, {}}
+    {0x11, 1, {0x00}},
+    {REGFLAG_DELAY, 200, {}},
 
+    // Display ON
+    {0x29, 1, {0x00}},
+    {REGFLAG_DELAY, 50, {}},
+    {0xFF, 5, {0xFF,0x98,0x06,0x04,0x08}},
+    {REGFLAG_END_OF_TABLE, 0x00, {}}
 };
 
 static struct LCM_setting_table lcm_deep_sleep_mode_in_setting[] = {
-	// Display off sequence
-{0xFF,5,{0xFF,0x98,0x06,0x04,0x00}},
-	{0x28, 0, {0x00}},
-       {REGFLAG_DELAY, 120, {}},
-       // Sleep Mode On
-	{0x10, 0, {0x00}},
-       {REGFLAG_DELAY, 20, {}},    
-	{REGFLAG_END_OF_TABLE, 0x00, {}}
+    {0xFF, 5, {0xFF,0x98,0x06,0x04,0x00}},
+    {REGFLAG_DELAY, 1, {}}, 
+    {0xFF, 5, {0xFF,0x98,0x06,0x04,0x00}},
+    // Display off sequence
+    {0x28, 1, {0x00}},
+    {REGFLAG_DELAY, 120, {}},
+
+    // Sleep Mode On
+    {0x10, 1, {0x00}},
+    {REGFLAG_DELAY, 200, {}},
+
+    {0xFF, 5, {0xFF,0x98,0x06,0x04,0x01}},
+    {0x58, 1, {0x91}},
+    {REGFLAG_END_OF_TABLE, 0x00, {}}
 };
 
 static struct LCM_setting_table lcm_backlight_level_setting[] = {
@@ -473,7 +480,7 @@ static void push_table(struct LCM_setting_table *table, unsigned int count, unsi
 
 
 // ---------------------------------------------------------------------------
-//  LCM Driver Implementations
+//  LCM Driver Implementations#ifdef BUILD_LK
 // ---------------------------------------------------------------------------
 
 static void lcm_set_util_funcs(const LCM_UTIL_FUNCS *util)
@@ -579,7 +586,7 @@ static unsigned int lcm_compare_id(void)
 
 static void lcm_init(void)
 {
-    unsigned int i = 0;
+    unsigned int id = 0;
 
     SET_RESET_PIN(1);
     MDELAY(20);
@@ -588,9 +595,15 @@ static void lcm_init(void)
     SET_RESET_PIN(1);
     MDELAY(120);
 	
-    //i = lcm_compare_id();
-    i = 0;
-    if(0 == i)
+    id = lcm_compare_id();
+
+    #ifdef BUILD_LK
+        printf("ILI9806C lk %s id=%d\n", __func__,id);
+    #else
+        printk("ILI9806C kernel %s id=%d\n", __func__,id);
+    #endif
+
+    if(0 == id)
     	push_table(lcm_initialization_setting_0, sizeof(lcm_initialization_setting_0) / sizeof(struct LCM_setting_table), 1);
     else
 	push_table(lcm_initialization_setting, sizeof(lcm_initialization_setting) / sizeof(struct LCM_setting_table), 1);
@@ -633,6 +646,11 @@ static unsigned int lcm_esd_check(void)
 
 static unsigned int lcm_esd_recover(void)
 {     
+    #ifndef BUILD_LK   
+	    printk("lcm_esd_recover enter \n");
+	    lcm_init(); 
+    #endif 
+
     return TRUE;
 }
 
@@ -657,9 +675,9 @@ LCM_DRIVER ili9806c_wvga_dsi_vdo_lcm_drv =
 	.init           = lcm_init,				// 8003AFDD
 	.suspend        = lcm_suspend,			// 8003B155
 	.resume         = lcm_resume,			// 8003B049
-	//.compare_id    =  lcm_compare_id,		// 8003ADE9
+	.compare_id    =  lcm_compare_id,		// 8003ADE9
 	//.esd_check      = lcm_esd_check,		// ? 8003AE75
-	//.esd_recover    = lcm_esd_recover,	// ? 8003AE71
+	.esd_recover    = lcm_esd_recover,	// ? 8003AE71
 	//.update         = lcm_update,			// ? 8003AE91
 	//.set_backlight	= lcm_setbacklight, // ? 8003B04D
 	//.set_backlight_mode = lcm_setbacklight_mode,

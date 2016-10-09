@@ -443,16 +443,6 @@ static struct LCM_setting_table lcm_deep_sleep_mode_in_setting[] = {
     {REGFLAG_END_OF_TABLE, 0x00, {}}
 };
 
-static struct LCM_setting_table lcm_backlight_level_setting[] = {
-	{0x51, 1, {0xFF}},
-	{REGFLAG_END_OF_TABLE, 0x00, {}}
-};
-
-static struct LCM_setting_table lcm_backlight_mode_setting[] = {
-	{0x55, 1, {0x1}},
-	{REGFLAG_END_OF_TABLE, 0x00, {}}
-};
-
 static void push_table(struct LCM_setting_table *table, unsigned int count, unsigned char force_update)
 {
     unsigned int i;
@@ -464,11 +454,11 @@ static void push_table(struct LCM_setting_table *table, unsigned int count, unsi
         
         switch (cmd) {
             
-            case REGFLAG_DELAY :
+            case REGFLAG_DELAY : // 0xFE
                 MDELAY(table[i].count);
                 break;
                 
-            case REGFLAG_END_OF_TABLE :
+            case REGFLAG_END_OF_TABLE : // 0xFFF
                 break;
                 
             default:
@@ -491,32 +481,40 @@ static void lcm_set_util_funcs(const LCM_UTIL_FUNCS *util)
 
 static void lcm_get_params(LCM_PARAMS *params)
 {
-    memset(params, 0, 508);
+    memset(params, 0, sizeof(LCM_PARAMS));
     
     params->type   = LCM_TYPE_DSI;
     
     params->width  = FRAME_WIDTH;  
     params->height = FRAME_HEIGHT; 
     
+    #if 0
+        params->dbi.te_mode			= LCM_DBI_TE_MODE_VSYNC_ONLY;
+        params->dbi.te_edge_polarity	= LCM_POLARITY_RISING;
+    #endif
 
-    params->dbi.te_mode			= LCM_DBI_TE_MODE_VSYNC_ONLY;
-    params->dbi.te_edge_polarity	= LCM_POLARITY_RISING;
-    
-    params->dsi.mode   = SYNC_PULSE_VDO_MODE;	
+    #if (LCM_DSI_CMD_MODE)
+        params->dsi.mode   = CMD_MODE;
+    #else
+        params->dsi.mode   = SYNC_PULSE_VDO_MODE;
+    #endif
 
+    // DSI
+    /* Command mode setting */
     params->dsi.LANE_NUM		= LCM_TWO_LANE;
-
+	
+    //The following defined the fomat for data coming from LCD engine.
     params->dsi.data_format.color_order = LCM_COLOR_ORDER_RGB;
     params->dsi.data_format.trans_seq	= LCM_DSI_TRANS_SEQ_MSB_FIRST;
     params->dsi.data_format.padding 	= LCM_DSI_PADDING_ON_LSB;
-    params->dsi.data_format.format	    = LCM_DSI_FORMAT_RGB888;
+    params->dsi.data_format.format	= LCM_DSI_FORMAT_RGB888;
     
     // Video mode setting	
     params->dsi.intermediat_buffer_num = 2;
     
     params->dsi.PS = LCM_PACKED_PS_24BIT_RGB888;
     
-    params->dsi.word_count = 480*3;	
+    params->dsi.word_count = 480*3;	//DSI CMD mode need set these two bellow params, different to 6577	
 
     params->dsi.vertical_sync_active		= 4;
     params->dsi.vertical_backporch		= 16;
@@ -528,23 +526,42 @@ static void lcm_get_params(LCM_PARAMS *params)
     params->dsi.horizontal_frontporch		= 37; 
     params->dsi.horizontal_blanking_pixel	= 60;
     params->dsi.horizontal_active_pixel		= FRAME_WIDTH; 
-    params->dsi.compatibility_for_nvk		= 1; 		
+    
+    //params->dsi.compatibility_for_nvk		= 1; 		
 
-    params->dsi.pll_div1 = 1;		
-    params->dsi.pll_div2 = 1;		
-    params->dsi.fbk_div = 31; 	
+    #ifdef CONFIG_MT6589_FPGA
+	    params->dsi.pll_div1=2;     
+	    params->dsi.pll_div2=2;     
+	    params->dsi.fbk_sel=0;      
+	    params->dsi.fbk_div =8;     
+    #else
+	    params->dsi.pll_div1=1;     
+	    params->dsi.pll_div2=1;     
+	    params->dsi.fbk_sel=1;       
+	    params->dsi.fbk_div =31; 
+    #endif
+       
+    /*
+    #if 1
+	params->dsi.lcm_int_te_monitor = TRUE;
+	params->dsi.lcm_int_te_period = 1;
 
-    // Недостающие параметры
+	//if(params->dsi.lcm_int_te_monitor) 
+        //	params->dsi.vertical_frontporch *= 2;
+	
+	params->dsi.lcm_ext_te_monitor = FALSE; 
+
+	params->dsi.noncont_clock = FALSE; 
+    	params->dsi.noncont_clock_period = 2;
+    #endif */
+    
     params->dpi.rgb_order = 1;
-    params->dsi.fbk_sel = 1;
     params->dsi.cont_clock = 1;
     params->dpi.embsync = 2;
     params->dpi.lvds_tx_en = 0;
     params->dpi.io_driving_current = 0;
     params->dpi.lsb_io_driving_current = 2;
     params->dsi.ufoe_enable = 0;
-    params->dsi.lcm_int_te_period = 0;
-    //params->dsi.lcm_ext_te_monitor = 2; // WARNING: Если расскоментировать, то катинка плавно гаснет и потом просто черный экран
 }
 
 #ifndef BUILD_LK 
@@ -589,13 +606,12 @@ static void lcm_init(void)
     unsigned int id = 0;
 
     SET_RESET_PIN(1);
-    MDELAY(20);
     SET_RESET_PIN(0);
     MDELAY(30);
     SET_RESET_PIN(1);
     MDELAY(120);
 	
-    id = lcm_compare_id();
+    id = 0;
 
     #ifdef BUILD_LK
         printf("ILI9806C lk %s id=%d\n", __func__,id);
@@ -666,6 +682,8 @@ static void lcm_resume(void)
 }
 
 static unsigned char s_ucColorMode = 1;
+
+//Add for color enhance end
  
 LCM_DRIVER ili9806c_wvga_dsi_vdo_lcm_drv = 
 {
@@ -675,7 +693,7 @@ LCM_DRIVER ili9806c_wvga_dsi_vdo_lcm_drv =
 	.init           = lcm_init,				// 8003AFDD
 	.suspend        = lcm_suspend,			// 8003B155
 	.resume         = lcm_resume,			// 8003B049
-	.compare_id    =  lcm_compare_id,		// 8003ADE9
+	//.compare_id    =  lcm_compare_id,		// 8003ADE9
 	//.esd_check      = lcm_esd_check,		// ? 8003AE75
 	.esd_recover    = lcm_esd_recover,	// ? 8003AE71
 	//.update         = lcm_update,			// ? 8003AE91
